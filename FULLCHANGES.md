@@ -3350,6 +3350,8 @@ This document lists every individual change to anything in the game
 - Fixed confusion damage getting affected by type-boosting items and EXPLOSION/SELFDESTRUCT doubling
 - Fixed moves that lower Defense doing so after breaking a Substitute
 - Fixed COUNTER and MIRROR_COAT still working if the opponent used an item
+- Fixed a Disabled but PP Up–enhanced move not triggering STRUGGLE
+- Fixed Pokémon that fainted from PURSUIT having its old status condition when revived
 
 
 
