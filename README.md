@@ -4,12 +4,13 @@ This is a hack of Pokémon Crystal.
 
 This hack is centered around the idea of how the game would look if it wasn't geared towards 
 children. Essentially, what if all the people in Pokémon Crystal were smart, as well as
-updating all available gen 2 features to generation 7. 
+updating all available gen 2 features to generation 7 (only things already in generation 2
+are updated, so abilities won't be added)
 
 ## Current Changes
 
 - All learnsets updated to generation 7 with the available moves
-
+- Pokémon have their generation 7 evolution moves
 
 ## Planned Changes
 
@@ -31,9 +32,11 @@ updating all available gen 2 features to generation 7.
 - Improve the trainer rematch system
 - Pokémon survive poisoning with 1 HP
 - TMs are infinately reusable
-- Pokémon have their generation 7 evolution moves
 - Add a move reminder in Blackthorn City
 - Add new music tracks for some cities
+- All TMs have been updated to generation 7 moves
+- Update names of items and moves to generation 7
+- All Pokémon catch rates and base XP updated to generation 7
 
 ## Far-off Changes
 
