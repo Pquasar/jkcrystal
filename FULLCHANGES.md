@@ -1,23 +1,11 @@
-SECTION "Evolutions and Attacks", ROMX
+# FULL CHANGES
 
-; Evos+attacks data structure:
-; - Evolution methods:
-;    * db EVOLVE_LEVEL, level, species
-;    * db EVOLVE_ITEM, used item, species
-;    * db EVOLVE_TRADE, held item (or -1 for none), species
-;    * db EVOLVE_HAPPINESS, TR_* constant (ANYTIME, MORNDAY, NITE), species
-;    * db EVOLVE_STAT, level, ATK_*_DEF constant (LT, GT, EQ), species
-; - db 0 ; no more evolutions
-; - Learnset (in increasing level order):
-;    * db level, move
-; - db 0 ; no more level-up moves
+This document lists every individual change to anything in the game
 
-INCLUDE "data/pokemon/evolution_moves.asm"
-INCLUDE "data/pokemon/evos_attacks_pointers.asm"
+**Pokémon changes:**
 
-BulbasaurEvosAttacks:
-	db EVOLVE_LEVEL, 16, IVYSAUR
-	db 0 ; no more evolutions
+- BULBASAUR's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 3, GROWL
 	db 7, LEECH_SEED
@@ -30,11 +18,9 @@ BulbasaurEvosAttacks:
 	db 25, GROWTH
 	db 27, DOUBLE_EDGE
 	db 33, SYNTHESIS
-	db 0 ; no more level-up moves
 
-IvysaurEvosAttacks:
-	db EVOLVE_LEVEL, 32, VENUSAUR
-	db 0 ; no more evolutions
+- IVYSAUR's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, LEECH_SEED
@@ -50,10 +36,9 @@ IvysaurEvosAttacks:
 	db 31, DOUBLE_EDGE
 	db 39, SYNTHESIS
 	db 44, SOLARBEAM
-	db 0 ; no more level-up moves
 
-VenusaurEvosAttacks:
-	db 0 ; no more evolutions
+- VENUSAUR's learnset updated to generation 7 (USUM)
+
 	db 1, PETAL_DANCE
 	db 1, TACKLE
 	db 1, GROWL
@@ -71,11 +56,9 @@ VenusaurEvosAttacks:
 	db 31, DOUBLE_EDGE
 	db 45, SYNTHESIS
 	db 53, SOLARBEAM
-	db 0 ; no more level-up moves
 
-CharmanderEvosAttacks:
-	db EVOLVE_LEVEL, 16, CHARMELEON
-	db 0 ; no more evolutions
+- CHARMANDER's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, GROWL
 	db 7, EMBER
@@ -85,11 +68,9 @@ CharmanderEvosAttacks:
 	db 34, SLASH
 	db 37, FLAMETHROWER
 	db 43, FIRE_SPIN
-	db 0 ; no more level-up moves
 
-CharmeleonEvosAttacks:
-	db EVOLVE_LEVEL, 36, CHARIZARD
-	db 0 ; no more evolutions
+- CHARMELEON's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, GROWL
 	db 1, EMBER
@@ -100,10 +81,9 @@ CharmeleonEvosAttacks:
 	db 39, SLASH
 	db 43, FLAMETHROWER
 	db 50, FIRE_SPIN
-	db 0 ; no more level-up moves
 
-CharizardEvosAttacks:
-	db 0 ; no more evolutions
+- CHARIZARD's learnset updated to generation 7 (USUM)
+
 	db 1, WING_ATTACK
 	db 1, SCRATCH
 	db 1, GROWL
@@ -115,11 +95,9 @@ CharizardEvosAttacks:
 	db 41, SLASH
 	db 47, FLAMETHROWER
 	db 56, FIRE_SPIN
-	db 0 ; no more level-up moves
 
-SquirtleEvosAttacks:
-	db EVOLVE_LEVEL, 16, WARTORTLE
-	db 0 ; no more evolutions
+- SQUIRTLE's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 4, TAIL_WHIP
 	db 7, WATER_GUN
@@ -131,11 +109,9 @@ SquirtleEvosAttacks:
 	db 31, SKULL_BASH
 	db 37, RAIN_DANCE
 	db 40, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-WartortleEvosAttacks:
-	db EVOLVE_LEVEL, 36, BLASTOISE
-	db 0 ; no more evolutions
+- WARTORTLE's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 1, WATER_GUN
@@ -149,10 +125,9 @@ WartortleEvosAttacks:
 	db 37, SKULL_BASH
 	db 45, RAIN_DANCE
 	db 49, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-BlastoiseEvosAttacks:
-	db 0 ; no more evolutions
+- BLASTOISE's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 1, WATER_GUN
@@ -167,23 +142,13 @@ BlastoiseEvosAttacks:
 	db 40, SKULL_BASH
 	db 54, RAIN_DANCE
 	db 60, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-CaterpieEvosAttacks:
-	db EVOLVE_LEVEL, 7, METAPOD
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, STRING_SHOT
-	db 0 ; no more level-up moves
+- METAPOD's learnset updated to generation 7 (USUM)
 
-MetapodEvosAttacks:
-	db EVOLVE_LEVEL, 10, BUTTERFREE
-	db 0 ; no more evolutions
 	db 1, HARDEN
-	db 0 ; no more level-up moves
 
-ButterfreeEvosAttacks:
-	db 0 ; no more evolutions
+- BUTTERFREE's learnset updated to generation 7 (USUM)
+
 	db 1, GUST
 	db 1, CONFUSION
 	db 11, CONFUSION
@@ -194,23 +159,13 @@ ButterfreeEvosAttacks:
 	db 23, SUPERSONIC
 	db 25, SAFEGUARD
 	db 29, WHIRLWIND
-	db 0 ; no more level-up moves
 
-WeedleEvosAttacks:
-	db EVOLVE_LEVEL, 7, KAKUNA
-	db 0 ; no more evolutions
-	db 1, POISON_STING
-	db 1, STRING_SHOT
-	db 0 ; no more level-up moves
+- KAKUNA's learnset updated to generation 7 (USUM)
 
-KakunaEvosAttacks:
-	db EVOLVE_LEVEL, 10, BEEDRILL
-	db 0 ; no more evolutions
 	db 1, HARDEN
-	db 0 ; no more level-up moves
 
-BeedrillEvosAttacks:
-	db 0 ; no more evolutions
+- BEEDRILL's learnset updated to generation 7 (USUM)
+
 	db 1, TWINEEDLE
 	db 1, FURY_ATTACK
 	db 11, FURY_ATTACK
@@ -219,11 +174,9 @@ BeedrillEvosAttacks:
 	db 20, FOCUS_ENERGY
 	db 32, PIN_MISSILE
 	db 38, AGILITY
-	db 0 ; no more level-up moves
 
-PidgeyEvosAttacks:
-	db EVOLVE_LEVEL, 18, PIDGEOTTO
-	db 0 ; no more evolutions
+- PIDGEY's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 5, SAND_ATTACK
 	db 9, GUST
@@ -233,11 +186,9 @@ PidgeyEvosAttacks:
 	db 29, AGILITY
 	db 33, WING_ATTACK
 	db 45, MIRROR_MOVE
-	db 0 ; no more level-up moves
 
-PidgeottoEvosAttacks:
-	db EVOLVE_LEVEL, 36, PIDGEOT
-	db 0 ; no more evolutions
+- PIDGEOTTO's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, SAND_ATTACK
 	db 1, GUST
@@ -249,10 +200,9 @@ PidgeottoEvosAttacks:
 	db 32, AGILITY
 	db 37, WING_ATTACK
 	db 52, MIRROR_MOVE
-	db 0 ; no more level-up moves
 
-PidgeotEvosAttacks:
-	db 0 ; no more evolutions
+- PIDGEOT's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, SAND_ATTACK
 	db 1, GUST
@@ -265,11 +215,9 @@ PidgeotEvosAttacks:
 	db 32, AGILITY
 	db 38, WING_ATTACK
 	db 56, MIRROR_MOVE
-	db 0 ; no more level-up moves
 
-RattataEvosAttacks:
-	db EVOLVE_LEVEL, 20, RATICATE
-	db 0 ; no more evolutions
+- RATTATA's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 4, QUICK_ATTACK
@@ -280,10 +228,9 @@ RattataEvosAttacks:
 	db 22, CRUNCH
 	db 28, SUPER_FANG
 	db 31, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-RaticateEvosAttacks: 
-	db 0 ; no more evolutions
+- RATICATE's learnset updated to generation 7 (USUM)
+
 	db 1, SCARY_FACE
 	db 1, SWORDS_DANCE
 	db 1, TACKLE
@@ -298,11 +245,9 @@ RaticateEvosAttacks:
 	db 24, CRUNCH
 	db 34, SUPER_FANG
 	db 39, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-SpearowEvosAttacks:
-	db EVOLVE_LEVEL, 20, FEAROW
-	db 0 ; no more evolutions
+- SPEAROW's learnset updated to generation 7 (USUM)
+
 	db 1, PECK
 	db 1, GROWL
 	db 4, LEER
@@ -312,10 +257,9 @@ SpearowEvosAttacks:
 	db 25, AGILITY
 	db 29, FOCUS_ENERGY
 	db 36, DRILL_PECK
-	db 0 ; no more level-up moves
 
-FearowEvosAttacks:
-	db 0 ; no more evolutions
+- FEAROW's learnset updated to generation 7 (USUM)
+
 	db 1, PECK
 	db 1, GROWL
 	db 1, LEER
@@ -327,11 +271,9 @@ FearowEvosAttacks:
 	db 27, AGILITY
 	db 32, FOCUS_ENERGY
 	db 41, DRILL_PECK
-	db 0 ; no more level-up moves
 
-EkansEvosAttacks:
-	db EVOLVE_LEVEL, 22, ARBOK
-	db 0 ; no more evolutions
+- EKANS's learnset updated to generation 7 (USUM)
+
 	db 1, WRAP
 	db 1, LEER
 	db 4, POISON_STING
@@ -340,10 +282,9 @@ EkansEvosAttacks:
 	db 17, SCREECH
 	db 20, ACID
 	db 41, HAZE
-	db 0 ; no more level-up moves
 
-ArbokEvosAttacks:
-	db 0 ; no more evolutions
+- ARBOK's learnset updated to generation 7 (USUM)
+
 	db 1, CRUNCH
 	db 1, WRAP
 	db 1, LEER
@@ -355,11 +296,9 @@ ArbokEvosAttacks:
 	db 17, SCREECH
 	db 20, ACID
 	db 51, HAZE
-	db 0 ; no more level-up moves
 
-PikachuEvosAttacks:
-	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
-	db 0 ; no more evolutions
+- PIKACHU's learnset updated to generation 7 (USUM)
+
 	db 1, TAIL_WHIP
 	db 1, THUNDERSHOCK
 	db 5, GROWL
@@ -372,19 +311,16 @@ PikachuEvosAttacks:
 	db 45, AGILITY
 	db 53, LIGHT_SCREEN
 	db 58, THUNDER
-	db 0 ; no more level-up moves
 
-RaichuEvosAttacks:
-	db 0 ; no more evolutions
+- RAICHU's learnset updated to generation 7 (USUM)
+
 	db 1, THUNDERSHOCK
 	db 1, TAIL_WHIP
 	db 1, QUICK_ATTACK
 	db 1, THUNDERBOLT
-	db 0 ; no more level-up moves
 
-SandshrewEvosAttacks:
-	db EVOLVE_LEVEL, 22, SANDSLASH
-	db 0 ; no more evolutions
+- SANDSHREW's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, DEFENSE_CURL
 	db 3, SAND_ATTACK
@@ -400,10 +336,9 @@ SandshrewEvosAttacks:
 	db 38, SWORDS_DANCE
 	db 42, SANDSTORM
 	db 46, EARTHQUAKE
-	db 0 ; no more level-up moves
 
-SandslashEvosAttacks:
-	db 0 ; no more evolutions
+- SANDSLASH's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, DEFENSE_CURL
 	db 1, SAND_ATTACK
@@ -421,11 +356,9 @@ SandslashEvosAttacks:
 	db 43, SWORDS_DANCE
 	db 48, SANDSTORM
 	db 53, EARTHQUAKE
-	db 0 ; no more level-up moves
 
-NidoranFEvosAttacks:
-	db EVOLVE_LEVEL, 16, NIDORINA
-	db 0 ; no more evolutions
+- NIDORANF's learnset updated to generation 7 (USUM)
+
 	db 1, GROWL
 	db 1, SCRATCH
 	db 7, TAIL_WHIP
@@ -434,11 +367,9 @@ NidoranFEvosAttacks:
 	db 19, FURY_SWIPES
 	db 21, BITE
 	db 37, CRUNCH
-	db 0 ; no more level-up moves
 
-NidorinaEvosAttacks:
-	db EVOLVE_ITEM, MOON_STONE, NIDOQUEEN
-	db 0 ; no more evolutions
+- NIDORINA's learnset updated to generation 7 (USUM)
+
 	db 1, GROWL
 	db 1, SCRATCH
 	db 7, TAIL_WHIP
@@ -447,20 +378,17 @@ NidorinaEvosAttacks:
 	db 20, FURY_SWIPES
 	db 23, BITE
 	db 43, CRUNCH
-	db 0 ; no more level-up moves
 
-NidoqueenEvosAttacks:
-	db 0 ; no more evolutions
+- NIDOQUEEN's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, TAIL_WHIP
 	db 1, DOUBLE_KICK
 	db 1, POISON_STING
 	db 35, BODY_SLAM
-	db 0 ; no more level-up moves
 
-NidoranMEvosAttacks:
-	db EVOLVE_LEVEL, 16, NIDORINO
-	db 0 ; no more evolutions
+- NIDORANM's learnset updated to generation 7 (USUM)
+
 	db 1, LEER
 	db 1, PECK
 	db 7, FOCUS_ENERGY
@@ -469,11 +397,9 @@ NidoranMEvosAttacks:
 	db 19, FURY_ATTACK
 	db 21, HORN_ATTACK
 	db 45, HORN_DRILL
-	db 0 ; no more level-up moves
 
-NidorinoEvosAttacks:
-	db EVOLVE_ITEM, MOON_STONE, NIDOKING
-	db 0 ; no more evolutions
+- NIDORINO's learnset updated to generation 7 (USUM)
+
 	db 1, LEER
 	db 1, PECK
 	db 7, FOCUS_ENERGY
@@ -482,10 +408,9 @@ NidorinoEvosAttacks:
 	db 20, FURY_ATTACK
 	db 23, HORN_ATTACK
 	db 58, HORN_DRILL
-	db 0 ; no more level-up moves
 
-NidokingEvosAttacks:
-	db 0 ; no more evolutions
+- NIDOKING's learnset updated to generation 7 (USUM)
+
 	db 1, MEGAHORN
 	db 1, PECK
 	db 1, FOCUS_ENERGY
@@ -493,11 +418,9 @@ NidokingEvosAttacks:
 	db 1, POISON_STING
 	db 35, THRASH
 	db 58, MEGAHORN
-	db 0 ; no more level-up moves
 
-ClefairyEvosAttacks:
-	db EVOLVE_ITEM, MOON_STONE, CLEFABLE
-	db 0 ; no more evolutions
+- CLEFAIRY's learnset updated to generation 7 (USUM)
+
 	db 1, POUND
 	db 1, GROWL
 	db 1, ENCORE
@@ -508,19 +431,16 @@ ClefairyEvosAttacks:
 	db 31, METRONOME
 	db 40, BODY_SLAM
 	db 43, MOONLIGHT
-	db 0 ; no more level-up moves
 
-ClefableEvosAttacks:
-	db 0 ; no more evolutions
+- CLEFABLE's learnset updated to generation 7 (USUM)
+
 	db 1, SING
 	db 1, DOUBLESLAP
 	db 1, MINIMIZE
 	db 1, METRONOME
-	db 0 ; no more level-up moves
 
-VulpixEvosAttacks:
-	db EVOLVE_ITEM, FIRE_STONE, NINETALES
-	db 0 ; no more evolutions
+- VULPIX's learnset updated to generation 7 (USUM)
+
 	db 1, EMBER
 	db 4, TAIL_WHIP
 	db 7, ROAR
@@ -531,19 +451,16 @@ VulpixEvosAttacks:
 	db 34, SAFEGUARD
 	db 36, FLAMETHROWER
 	db 42, FIRE_BLAST
-	db 0 ; no more level-up moves
 
-NinetalesEvosAttacks:
-	db 0 ; no more evolutions
+- NINETALES's learnset updated to generation 7 (USUM)
+
 	db 1, FLAMETHROWER
 	db 1, QUICK_ATTACK
 	db 1, CONFUSE_RAY
 	db 1, SAFEGUARD
-	db 0 ; no more level-up moves
 
-JigglypuffEvosAttacks:
-	db EVOLVE_ITEM, MOON_STONE, WIGGLYTUFF
-	db 0 ; no more evolutions
+- JIGGLYPUFF's learnset updated to generation 7 (USUM)
+
 	db 1, SING
 	db 3, DEFENSE_CURL
 	db 5, POUND
@@ -554,20 +471,17 @@ JigglypuffEvosAttacks:
 	db 32, BODY_SLAM
 	db 38, MIMIC
 	db 45, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-WigglytuffEvosAttacks:
-	db 0 ; no more evolutions
+- WIGGLYTUFF's learnset updated to generation 7 (USUM)
+
 	db 1, DOUBLE_EDGE
 	db 1, SING
 	db 1, DEFENSE_CURL
 	db 1, DISABLE
 	db 1, DOUBLESLAP
-	db 0 ; no more level-up moves
 
-ZubatEvosAttacks:
-	db EVOLVE_LEVEL, 22, GOLBAT
-	db 0 ; no more evolutions
+- ZUBAT's learnset updated to generation 7 (USUM)
+
 	db 1, ABSORB
 	db 5, SUPERSONIC
 	db 11, BITE
@@ -577,11 +491,9 @@ ZubatEvosAttacks:
 	db 29, MEAN_LOOK
 	db 31, LEECH_LIFE
 	db 35, HAZE
-	db 0 ; no more level-up moves
 
-GolbatEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, CROBAT
-	db 0 ; no more evolutions
+- GOLBAT's learnset updated to generation 7 (USUM)
+
 	db 1, SCREECH
 	db 1, ABSORB
 	db 1, SUPERSONIC
@@ -594,11 +506,9 @@ GolbatEvosAttacks:
 	db 32, MEAN_LOOK
 	db 35, LEECH_LIFE
 	db 40, HAZE
-	db 0 ; no more level-up moves
 
-OddishEvosAttacks:
-	db EVOLVE_LEVEL, 21, GLOOM
-	db 0 ; no more evolutions
+- ODDISH's learnset updated to generation 7 (USUM)
+
 	db 1, ABSORB
 	db 1, GROWTH
 	db 5, SWEET_SCENT
@@ -611,12 +521,9 @@ OddishEvosAttacks:
 	db 31, GIGA_DRAIN
 	db 35, TOXIC
 	db 51, PETAL_DANCE
-	db 0 ; no more level-up moves
 
-GloomEvosAttacks:
-	db EVOLVE_ITEM, LEAF_STONE, VILEPLUME
-	db EVOLVE_ITEM, SUN_STONE, BELLOSSOM
-	db 0 ; no more evolutions
+- GLOOM's learnset updated to generation 7 (USUM)
+
 	db 1, ABSORB
 	db 1, GROWTH
 	db 1, SWEET_SCENT
@@ -631,20 +538,17 @@ GloomEvosAttacks:
 	db 34, GIGA_DRAIN
 	db 39, TOXIC
 	db 59, PETAL_DANCE
-	db 0 ; no more level-up moves
 
-VileplumeEvosAttacks:
-	db 0 ; no more evolutions
+- VILEPLUME's learnset updated to generation 7 (USUM)
+
 	db 1, MEGA_DRAIN
 	db 1, POISONPOWDER
 	db 1, STUN_SPORE
 	db 59, PETAL_DANCE
 	db 69, SOLARBEAM
-	db 0 ; no more level-up moves
 
-ParasEvosAttacks:
-	db EVOLVE_LEVEL, 24, PARASECT
-	db 0 ; no more evolutions
+- PARAS's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 6, STUN_SPORE
 	db 6, POISONPOWDER
@@ -654,10 +558,9 @@ ParasEvosAttacks:
 	db 27, SLASH
 	db 33, GROWTH
 	db 38, GIGA_DRAIN
-	db 0 ; no more level-up moves
 
-ParasectEvosAttacks:
-	db 0 ; no more evolutions
+- PARASECT's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, STUN_SPORE
 	db 1, POISONPOWDER
@@ -670,11 +573,9 @@ ParasectEvosAttacks:
 	db 29, SLASH
 	db 37, GROWTH
 	db 44, GIGA_DRAIN
-	db 0 ; no more level-up moves
 
-VenonatEvosAttacks:
-	db EVOLVE_LEVEL, 31, VENOMOTH
-	db 0 ; no more evolutions
+- VENONAT's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, DISABLE
 	db 1, FORESIGHT
@@ -686,10 +587,9 @@ VenonatEvosAttacks:
 	db 29, SLEEP_POWDER
 	db 35, LEECH_LIFE
 	db 47, PSYCHIC_M
-	db 0 ; no more level-up moves
 
-VenomothEvosAttacks:
-	db 0 ; no more evolutions
+- VENOMOTH's learnset updated to generation 7 (USUM)
+
 	db 1, GUST
 	db 1, TACKLE
 	db 1, DISABLE
@@ -703,11 +603,9 @@ VenomothEvosAttacks:
 	db 29, SLEEP_POWDER
 	db 37, LEECH_LIFE
 	db 55, PSYCHIC_M
-	db 0 ; no more level-up moves
 
-DiglettEvosAttacks:
-	db EVOLVE_LEVEL, 26, DUGTRIO
-	db 0 ; no more evolutions
+- DIGLETT's learnset updated to generation 7 (USUM)
+
 	db 1, SAND_ATTACK
 	db 1, SCRATCH
 	db 4, GROWL
@@ -717,10 +615,9 @@ DiglettEvosAttacks:
 	db 35, SLASH
 	db 39, EARTHQUAKE
 	db 43, FISSURE
-	db 0 ; no more level-up moves
 
-DugtrioEvosAttacks:
-	db 0 ; no more evolutions
+- DUGTRIO's learnset updated to generation 7 (USUM)
+
 	db 1, TRI_ATTACK
 	db 1, SCRATCH
 	db 1, SAND_ATTACK
@@ -732,11 +629,9 @@ DugtrioEvosAttacks:
 	db 41, SLASH
 	db 47, EARTHQUAKE
 	db 53, FISSURE
-	db 0 ; no more level-up moves
 
-MeowthEvosAttacks:
-	db EVOLVE_LEVEL, 28, PERSIAN
-	db 0 ; no more evolutions
+- MEOWTH's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, GROWL
 	db 6, BITE
@@ -745,10 +640,9 @@ MeowthEvosAttacks:
 	db 22, FAINT_ATTACK
 	db 30, PAY_DAY
 	db 33, SLASH
-	db 0 ; no more level-up moves
 
-PersianEvosAttacks:
-	db 0 ; no more evolutions
+- PERSIAN's learnset updated to generation 7 (USUM)
+
 	db 1, SWIFT
 	db 1, SCRATCH
 	db 1, GROWL
@@ -758,11 +652,9 @@ PersianEvosAttacks:
 	db 17, SCREECH
 	db 22, FAINT_ATTACK
 	db 37, SLASH
-	db 0 ; no more level-up moves
 
-PsyduckEvosAttacks:
-	db EVOLVE_LEVEL, 33, GOLDUCK
-	db 0 ; no more evolutions
+- PSYDUCK's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 4, TAIL_WHIP
 	db 7, WATER_GUN
@@ -773,10 +665,9 @@ PsyduckEvosAttacks:
 	db 34, PSYCH_UP
 	db 37, AMNESIA
 	db 40, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-GolduckEvosAttacks:
-	db 0 ; no more evolutions
+- GOLDUCK's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, TAIL_WHIP
 	db 1, WATER_GUN
@@ -789,11 +680,9 @@ GolduckEvosAttacks:
 	db 36, PSYCH_UP
 	db 41, AMNESIA
 	db 46, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-MankeyEvosAttacks:
-	db EVOLVE_LEVEL, 28, PRIMEAPE
-	db 0 ; no more evolutions
+- MANKEY's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, LOW_KICK
 	db 1, LEER
@@ -807,10 +696,9 @@ MankeyEvosAttacks:
 	db 33, THRASH
 	db 40, SCREECH
 	db 47, OUTRAGE
-	db 0 ; no more level-up moves
 
-PrimeapeEvosAttacks:
-	db 0 ; no more evolutions
+- PRIMEAPE's learnset updated to generation 7 (USUM)
+
 	db 1, RAGE
 	db 1, SCRATCH
 	db 1, LOW_KICK
@@ -825,11 +713,9 @@ PrimeapeEvosAttacks:
 	db 35, THRASH
 	db 44, SCREECH
 	db 53, OUTRAGE
-	db 0 ; no more level-up moves
 
-GrowlitheEvosAttacks:
-	db EVOLVE_ITEM, FIRE_STONE, ARCANINE
-	db 0 ; no more evolutions
+- GROWLITHE's learnset updated to generation 7 (USUM)
+
 	db 1, BITE
 	db 1, ROAR
 	db 6, EMBER
@@ -841,18 +727,15 @@ GrowlitheEvosAttacks:
 	db 34, FLAMETHROWER
 	db 39, CRUNCH
 	db 43, OUTRAGE
-	db 0 ; no more level-up moves
 
-ArcanineEvosAttacks:
-	db 0 ; no more evolutions
+- ARCANINE's learnset updated to generation 7 (USUM)
+
 	db 1, BITE
 	db 1, ROAR
 	db 34, EXTREMESPEED
-	db 0 ; no more level-up moves
 
-PoliwagEvosAttacks:
-	db EVOLVE_LEVEL, 25, POLIWHIRL
-	db 0 ; no more evolutions
+- POLIWAG's learnset updated to generation 7 (USUM)
+
 	db 5, WATER_GUN
 	db 8, HYPNOSIS
 	db 11, BUBBLE
@@ -862,12 +745,9 @@ PoliwagEvosAttacks:
 	db 25, BUBBLEBEAM
 	db 31, BELLY_DRUM
 	db 38, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-PoliwhirlEvosAttacks:
-	db EVOLVE_ITEM, WATER_STONE, POLIWRATH
-	db EVOLVE_TRADE, KINGS_ROCK, POLITOED
-	db 0 ; no more evolutions
+- POLIWHIRL's learnset updated to generation 7 (USUM)
+
 	db 1, WATER_GUN
 	db 1, HYPNOSIS
 	db 5, WATER_GUN
@@ -879,27 +759,22 @@ PoliwhirlEvosAttacks:
 	db 27, BUBBLEBEAM
 	db 37, BELLY_DRUM
 	db 48, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-PoliwrathEvosAttacks:
-	db 0 ; no more evolutions
+- POLIWRATH's learnset updated to generation 7 (USUM)
+
 	db 1, SUBMISSION
 	db 1, BUBBLEBEAM
 	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
 	db 32, DYNAMICPUNCH
 	db 43, MIND_READER
-	db 0 ; no more level-up moves
 
-AbraEvosAttacks:
-	db EVOLVE_LEVEL, 16, KADABRA
-	db 0 ; no more evolutions
+- ABRA's learnset updated to generation 7 (USUM)
+
 	db 1, TELEPORT
-	db 0 ; no more level-up moves
 
-KadabraEvosAttacks:
-	db EVOLVE_TRADE, -1, ALAKAZAM
-	db 0 ; no more evolutions
+- KADABRA's learnset updated to generation 7 (USUM)
+
 	db 1, KINESIS
 	db 1, TELEPORT
 	db 1, CONFUSION
@@ -910,10 +785,9 @@ KadabraEvosAttacks:
 	db 31, RECOVER
 	db 38, PSYCHIC_M
 	db 43, FUTURE_SIGHT
-	db 0 ; no more level-up moves
 
-AlakazamEvosAttacks:
-	db 0 ; no more evolutions
+- ALAKAZAM's learnset updated to generation 7 (USUM)
+
 	db 1, KINESIS
 	db 1, TELEPORT
 	db 1, CONFUSION
@@ -924,11 +798,9 @@ AlakazamEvosAttacks:
 	db 31, RECOVER
 	db 38, PSYCHIC_M
 	db 43, FUTURE_SIGHT
-	db 0 ; no more level-up moves
 
-MachopEvosAttacks:
-	db EVOLVE_LEVEL, 28, MACHOKE
-	db 0 ; no more evolutions
+- MACHOP's learnset updated to generation 7 (USUM)
+
 	db 1, LOW_KICK
 	db 1, LEER
 	db 3, FOCUS_ENERGY
@@ -940,11 +812,9 @@ MachopEvosAttacks:
 	db 39, CROSS_CHOP
 	db 43, SCARY_FACE
 	db 45, DYNAMICPUNCH
-	db 0 ; no more level-up moves
 
-MachokeEvosAttacks:
-	db EVOLVE_TRADE, -1, MACHAMP
-	db 0 ; no more evolutions
+- MACHOKE's learnset updated to generation 7 (USUM)
+
 	db 1, LOW_KICK
 	db 1, LEER
 	db 1, FOCUS_ENERGY
@@ -958,10 +828,9 @@ MachokeEvosAttacks:
 	db 47, CROSS_CHOP
 	db 53, SCARY_FACE
 	db 57, DYNAMICPUNCH
-	db 0 ; no more level-up moves
 
-MachampEvosAttacks:
-	db 0 ; no more evolutions
+- MACHAMP's learnset updated to generation 7 (USUM)
+
 	db 1, STRENGTH
 	db 1, LOW_KICK
 	db 1, LEER
@@ -976,11 +845,9 @@ MachampEvosAttacks:
 	db 47, CROSS_CHOP
 	db 53, SCARY_FACE
 	db 57, DYNAMICPUNCH
-	db 0 ; no more level-up moves
 
-BellsproutEvosAttacks:
-	db EVOLVE_LEVEL, 21, WEEPINBELL
-	db 0 ; no more evolutions
+- BELLSPROUT's learnset updated to generation 7 (USUM)
+
 	db 1, VINE_WHIP
 	db 7, GROWTH
 	db 11, WRAP
@@ -991,11 +858,9 @@ BellsproutEvosAttacks:
 	db 29, SWEET_SCENT
 	db 39, RAZOR_LEAF
 	db 47, SLAM
-	db 0 ; no more level-up moves
 
-WeepinbellEvosAttacks:
-	db EVOLVE_ITEM, LEAF_STONE, VICTREEBEL
-	db 0 ; no more evolutions
+- WEEPINBELL's learnset updated to generation 7 (USUM)
+
 	db 1, VINE_WHIP
 	db 1, GROWTH
 	db 1, WRAP
@@ -1008,19 +873,16 @@ WeepinbellEvosAttacks:
 	db 32, SWEET_SCENT
 	db 44, RAZOR_LEAF
 	db 54, SLAM
-	db 0 ; no more level-up moves
 
-VictreebelEvosAttacks:
-	db 0 ; no more evolutions
+- VICTREEBEL's learnset updated to generation 7 (USUM)
+
 	db 1, VINE_WHIP
 	db 1, SLEEP_POWDER
 	db 1, SWEET_SCENT
 	db 1, RAZOR_LEAF
-	db 0 ; no more level-up moves
 
-TentacoolEvosAttacks:
-	db EVOLVE_LEVEL, 30, TENTACRUEL
-	db 0 ; no more evolutions
+- TENTACOOL's learnset updated to generation 7 (USUM)
+
 	db 1, POISON_STING
 	db 4, SUPERSONIC
 	db 7, CONSTRICT
@@ -1030,10 +892,9 @@ TentacoolEvosAttacks:
 	db 28, BARRIER
 	db 37, SCREECH
 	db 46, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-TentacruelEvosAttacks:
-	db 0 ; no more evolutions
+- TENTACRUEL's learnset updated to generation 7 (USUM)
+
 	db 1, POISON_STING
 	db 1, SUPERSONIC
 	db 1, CONSTRICT
@@ -1046,11 +907,9 @@ TentacruelEvosAttacks:
 	db 28, BARRIER
 	db 40, SCREECH
 	db 52, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-GeodudeEvosAttacks:
-	db EVOLVE_LEVEL, 25, GRAVELER
-	db 0 ; no more evolutions
+- GEODUDE's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
 	db 10, ROLLOUT
@@ -1060,11 +919,9 @@ GeodudeEvosAttacks:
 	db 34, EARTHQUAKE
 	db 36, EXPLOSION
 	db 40, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-GravelerEvosAttacks:
-	db EVOLVE_TRADE, -1, GOLEM
-	db 0 ; no more evolutions
+- GRAVELER's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
 	db 10, ROLLOUT
@@ -1074,10 +931,9 @@ GravelerEvosAttacks:
 	db 40, EARTHQUAKE
 	db 44, EXPLOSION
 	db 50, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-GolemEvosAttacks:
-	db 0 ; no more evolutions
+- GOLEM's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
 	db 10, ROLLOUT
@@ -1087,11 +943,9 @@ GolemEvosAttacks:
 	db 40, EARTHQUAKE
 	db 44, EXPLOSION
 	db 50, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-PonytaEvosAttacks:
-	db EVOLVE_LEVEL, 40, RAPIDASH
-	db 0 ; no more evolutions
+- PONYTA's learnset updated to generation 7 (USUM)
+
 	db 1, GROWL
 	db 1, TACKLE
 	db 4, TAIL_WHIP
@@ -1102,10 +956,9 @@ PonytaEvosAttacks:
 	db 29, TAKE_DOWN
 	db 37, AGILITY
 	db 41, FIRE_BLAST
-	db 0 ; no more level-up moves
 
-RapidashEvosAttacks:
-	db 0 ; no more evolutions
+- RAPIDASH's learnset updated to generation 7 (USUM)
+
 	db 1, FURY_ATTACK
 	db 1, MEGAHORN
 	db 1, GROWL
@@ -1120,12 +973,9 @@ RapidashEvosAttacks:
 	db 29, TAKE_DOWN
 	db 37, AGILITY
 	db 41, FIRE_BLAST
-	db 0 ; no more level-up moves
 
-SlowpokeEvosAttacks:
-	db EVOLVE_LEVEL, 37, SLOWBRO
-	db EVOLVE_TRADE, KINGS_ROCK, SLOWKING
-	db 0 ; no more evolutions
+- SLOWPOKE's learnset updated to generation 7 (USUM)
+
 	db 1, CURSE
 	db 1, TACKLE
 	db 5, GROWL
@@ -1137,10 +987,9 @@ SlowpokeEvosAttacks:
 	db 45, PSYCHIC_M
 	db 49, RAIN_DANCE
 	db 54, PSYCH_UP
-	db 0 ; no more level-up moves
 
-SlowbroEvosAttacks:
-	db 0 ; no more evolutions
+- SLOWBRO's learnset updated to generation 7 (USUM)
+
 	db 1, WITHDRAW
 	db 1, CURSE
 	db 1, TACKLE
@@ -1154,11 +1003,9 @@ SlowbroEvosAttacks:
 	db 49, PSYCHIC_M
 	db 55, RAIN_DANCE
 	db 62, PSYCH_UP
-	db 0 ; no more level-up moves
 
-MagnemiteEvosAttacks:
-	db EVOLVE_LEVEL, 30, MAGNETON
-	db 0 ; no more evolutions
+- MAGNEMITE's learnset updated to generation 7 (USUM)
+
 	db 1, SUPERSONIC
 	db 1, TACKLE
 	db 5, THUNDERSHOCK
@@ -1169,10 +1016,9 @@ MagnemiteEvosAttacks:
 	db 35, SCREECH
 	db 41, LOCK_ON
 	db 49, ZAP_CANNON
-	db 0 ; no more level-up moves
 
-MagnetonEvosAttacks:
-	db 0 ; no more evolutions
+- MAGNETON's learnset updated to generation 7 (USUM)
+
 	db 1, TRI_ATTACK
 	db 1, ZAP_CANNON
 	db 1, SUPERSONIC
@@ -1187,10 +1033,9 @@ MagnetonEvosAttacks:
 	db 39, SCREECH
 	db 49, LOCK_ON
 	db 63, ZAP_CANNON
-	db 0 ; no more level-up moves
 
-FarfetchDEvosAttacks:
-	db 0 ; no more evolutions
+- FARFETCHD's learnset updated to generation 7 (USUM)
+
 	db 1, PECK
 	db 1, SAND_ATTACK
 	db 1, LEER
@@ -1200,11 +1045,9 @@ FarfetchDEvosAttacks:
 	db 25, SWORDS_DANCE
 	db 31, AGILITY
 	db 45, FALSE_SWIPE
-	db 0 ; no more level-up moves
 
-DoduoEvosAttacks:
-	db EVOLVE_LEVEL, 31, DODRIO
-	db 0 ; no more evolutions
+- DODUO's learnset updated to generation 7 (USUM)
+
 	db 1, PECK
 	db 1, GROWL
 	db 5, QUICK_ATTACK
@@ -1216,10 +1059,9 @@ DoduoEvosAttacks:
 	db 40, JUMP_KICK
 	db 43, DRILL_PECK
 	db 50, THRASH
-	db 0 ; no more level-up moves
 
-DodrioEvosAttacks:
-	db 0 ; no more evolutions
+- DODRIO's learnset updated to generation 7 (USUM)
+
 	db 1, TRI_ATTACK
 	db 1, PECK
 	db 1, GROWL
@@ -1234,11 +1076,9 @@ DodrioEvosAttacks:
 	db 43, JUMP_KICK
 	db 47, DRILL_PECK
 	db 56, THRASH
-	db 0 ; no more level-up moves
 
-SeelEvosAttacks:
-	db EVOLVE_LEVEL, 34, DEWGONG
-	db 0 ; no more evolutions
+- SEEL's learnset updated to generation 7 (USUM)
+
 	db 1, HEADBUTT
 	db 3, GROWL
 	db 11, ICY_WIND
@@ -1248,10 +1088,9 @@ SeelEvosAttacks:
 	db 37, TAKE_DOWN
 	db 47, ICE_BEAM
 	db 51, SAFEGUARD
-	db 0 ; no more level-up moves
 
-DewgongEvosAttacks:
-	db 0 ; no more evolutions
+- DEWGONG's learnset updated to generation 7 (USUM)
+
 	db 1, HEADBUTT
 	db 1, GROWL
 	db 3, GROWL
@@ -1262,11 +1101,9 @@ DewgongEvosAttacks:
 	db 39, TAKE_DOWN
 	db 55, ICE_BEAM
 	db 61, SAFEGUARD
-	db 0 ; no more level-up moves
 
-GrimerEvosAttacks:
-	db EVOLVE_LEVEL, 38, MUK
-	db 0 ; no more evolutions
+- GRIMER's learnset updated to generation 7 (USUM)
+
 	db 1, POUND
 	db 1, POISON_GAS
 	db 4, HARDEN
@@ -1277,11 +1114,9 @@ GrimerEvosAttacks:
 	db 29, SLUDGE_BOMB
 	db 37, SCREECH
 	db 43, ACID_ARMOR
-	db 0 ; no more level-up moves
 
-MukEvosAttacks:
-	db 0 ; no more evolutions
-	; moves are not sorted by level
+- MUK's learnset updated to generation 7 (USUM)
+
 	db 1, POUND
 	db 1, POISON_GAS
 	db 1, HARDEN
@@ -1294,11 +1129,9 @@ MukEvosAttacks:
 	db 29, SLUDGE_BOMB
 	db 37, SCREECH
 	db 46, ACID_ARMOR
-	db 0 ; no more level-up moves
 
-ShellderEvosAttacks:
-	db EVOLVE_ITEM, WATER_STONE, CLOYSTER
-	db 0 ; no more evolutions
+- SHELLDER's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, WATER_GUN
 	db 4, WITHDRAW
@@ -1310,10 +1143,9 @@ ShellderEvosAttacks:
 	db 40, WHIRLPOOL
 	db 52, ICE_BEAM
 	db 61, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-CloysterEvosAttacks:
-	db 0 ; no more evolutions
+- CLOYSTER's learnset updated to generation 7 (USUM)
+
 	db 1, HYDRO_PUMP
 	db 1, WITHDRAW
 	db 1, SUPERSONIC
@@ -1321,11 +1153,9 @@ CloysterEvosAttacks:
 	db 1, AURORA_BEAM
 	db 13, SPIKE_CANNON
 	db 28, SPIKES
-	db 0 ; no more level-up moves
 
-GastlyEvosAttacks:
-	db EVOLVE_LEVEL, 25, HAUNTER
-	db 0 ; no more evolutions
+- GASTLY's learnset updated to generation 7 (USUM)
+
 	db 1, HYPNOSIS
 	db 1, LICK
 	db 5, SPITE
@@ -1337,11 +1167,9 @@ GastlyEvosAttacks:
 	db 33, DREAM_EATER
 	db 40, DESTINY_BOND
 	db 47, NIGHTMARE
-	db 0 ; no more level-up moves
 
-HaunterEvosAttacks:
-	db EVOLVE_TRADE, -1, GENGAR
-	db 0 ; no more evolutions
+- HAUNTER's learnset updated to generation 7 (USUM)
+
 	db 1, HYPNOSIS
 	db 1, LICK
 	db 1, SPITE
@@ -1354,10 +1182,9 @@ HaunterEvosAttacks:
 	db 39, DREAM_EATER
 	db 50, DESTINY_BOND
 	db 61, NIGHTMARE
-	db 0 ; no more level-up moves
 
-GengarEvosAttacks:
-	db 0 ; no more evolutions
+- GENGAR's learnset updated to generation 7 (USUM)
+
 	db 1, HYPNOSIS
 	db 1, LICK
 	db 1, SPITE
@@ -1370,11 +1197,9 @@ GengarEvosAttacks:
 	db 39, DREAM_EATER
 	db 50, DESTINY_BOND
 	db 61, NIGHTMARE
-	db 0 ; no more level-up moves
 
-OnixEvosAttacks:
-	db EVOLVE_TRADE, METAL_COAT, STEELIX
-	db 0 ; no more evolutions
+- ONIX's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, HARDEN
 	db 1, BIND
@@ -1388,11 +1213,9 @@ OnixEvosAttacks:
 	db 43, DIG
 	db 49, DOUBLE_EDGE
 	db 52, SANDSTORM
-	db 0 ; no more level-up moves
 
-DrowzeeEvosAttacks:
-	db EVOLVE_LEVEL, 26, HYPNO
-	db 0 ; no more evolutions
+- DROWZEE's learnset updated to generation 7 (USUM)
+
 	db 1, HYPNOSIS
 	db 1, POUND
 	db 5, DISABLE
@@ -1405,10 +1228,9 @@ DrowzeeEvosAttacks:
 	db 45, SWAGGER
 	db 49, PSYCHIC_M
 	db 61, FUTURE_SIGHT
-	db 0 ; no more level-up moves
 
-HypnoEvosAttacks:
-	db 0 ; no more evolutions
+- HYPNO's learnset updated to generation 7 (USUM)
+
 	db 1, NIGHTMARE
 	db 1, HYPNOSIS
 	db 1, POUND
@@ -1424,11 +1246,9 @@ HypnoEvosAttacks:
 	db 45, SWAGGER
 	db 49, PSYCHIC_M
 	db 61, FUTURE_SIGHT
-	db 0 ; no more level-up moves
 
-KrabbyEvosAttacks:
-	db EVOLVE_LEVEL, 28, KINGLER
-	db 0 ; no more evolutions
+- KRABBY's learnset updated to generation 7 (USUM)
+
 	db 1, BUBBLE
 	db 5, VICEGRIP
 	db 9, LEER
@@ -1441,10 +1261,9 @@ KrabbyEvosAttacks:
 	db 35, SLAM
 	db 41, CRABHAMMER
 	db 45, FLAIL
-	db 0 ; no more level-up moves
 
-KinglerEvosAttacks:
-	db 0 ; no more evolutions
+- KINGLER's learnset updated to generation 7 (USUM)
+
 	db 1, BUBBLE
 	db 1, VICEGRIP
 	db 1, LEER
@@ -1459,11 +1278,9 @@ KinglerEvosAttacks:
 	db 44, SLAM
 	db 56, CRABHAMMER
 	db 63, FLAIL
-	db 0 ; no more level-up moves
 
-VoltorbEvosAttacks:
-	db EVOLVE_LEVEL, 30, ELECTRODE
-	db 0 ; no more evolutions
+- VOLTORB's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 4, SONICBOOM
 	db 9, SPARK
@@ -1474,10 +1291,9 @@ VoltorbEvosAttacks:
 	db 29, LIGHT_SCREEN
 	db 41, EXPLOSION
 	db 48, MIRROR_COAT
-	db 0 ; no more level-up moves
 
-ElectrodeEvosAttacks:
-	db 0 ; no more evolutions
+- ELECTRODE's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, SONICBOOM
 	db 4, SONICBOOM
@@ -1489,11 +1305,9 @@ ElectrodeEvosAttacks:
 	db 29, LIGHT_SCREEN
 	db 47, EXPLOSION
 	db 58, MIRROR_COAT
-	db 0 ; no more level-up moves
 
-ExeggcuteEvosAttacks:
-	db EVOLVE_ITEM, LEAF_STONE, EXEGGUTOR
-	db 0 ; no more evolutions
+- EXEGGCUTE's learnset updated to generation 7 (USUM)
+
 	db 1, BARRAGE
 	db 1, HYPNOSIS
 	db 7, REFLECT
@@ -1503,20 +1317,17 @@ ExeggcuteEvosAttacks:
 	db 23, SLEEP_POWDER
 	db 27, CONFUSION
 	db 43, SOLARBEAM
-	db 0 ; no more level-up moves
 
-ExeggutorEvosAttacks:
-	db 0 ; no more evolutions
+- EXEGGUTOR's learnset updated to generation 7 (USUM)
+
 	db 1, STOMP
 	db 1, BARRAGE
 	db 1, HYPNOSIS
 	db 1, CONFUSION
 	db 27, EGG_BOMB
-	db 0 ; no more level-up moves
 
-CuboneEvosAttacks:
-	db EVOLVE_LEVEL, 28, MAROWAK
-	db 0 ; no more evolutions
+- CUBONE's learnset updated to generation 7 (USUM)
+
 	db 1, GROWL
 	db 3, TAIL_WHIP
 	db 7, BONE_CLUB
@@ -1529,10 +1340,9 @@ CuboneEvosAttacks:
 	db 31, THRASH
 	db 43, DOUBLE_EDGE
 	db 51, BONE_RUSH
-	db 0 ; no more level-up moves
 
-MarowakEvosAttacks:
-	db 0 ; no more evolutions
+- MAROWAK's learnset updated to generation 7 (USUM)
+
 	db 1, GROWL
 	db 1, TAIL_WHIP
 	db 1, BONE_CLUB
@@ -1548,10 +1358,9 @@ MarowakEvosAttacks:
 	db 33, THRASH
 	db 53, DOUBLE_EDGE
 	db 65, BONE_RUSH
-	db 0 ; no more level-up moves
 
-HitmonleeEvosAttacks:
-	db 0 ; no more evolutions
+- HITMONLEE's learnset updated to generation 7 (USUM)
+
 	db 1, DOUBLE_KICK
 	db 1, REVERSAL
 	db 1, MEGA_KICK
@@ -1568,10 +1377,9 @@ HitmonleeEvosAttacks:
 	db 49, ENDURE
 	db 53, MEGA_KICK
 	db 61, REVERSAL
-	db 0 ; no more level-up moves
 
-HitmonchanEvosAttacks:
-	db 0 ; no more evolutions
+- HITMONCHAN's learnset updated to generation 7 (USUM)
+
 	db 1, COMET_PUNCH
 	db 1, COUNTER
 	db 1, AGILITY
@@ -1585,10 +1393,9 @@ HitmonchanEvosAttacks:
 	db 36, FIRE_PUNCH
 	db 46, MEGA_PUNCH
 	db 50, DETECT
-	db 0 ; no more level-up moves
 
-LickitungEvosAttacks:
-	db 0 ; no more evolutions
+- LICKITUNG's learnset updated to generation 7 (USUM)
+
 	db 1, LICK
 	db 5, SUPERSONIC
 	db 9, DEFENSE_CURL
@@ -1598,11 +1405,9 @@ LickitungEvosAttacks:
 	db 29, SLAM
 	db 33, ROLLOUT
 	db 49, SCREECH
-	db 0 ; no more level-up moves
 
-KoffingEvosAttacks:
-	db EVOLVE_LEVEL, 35, WEEZING
-	db 0 ; no more evolutions
+- KOFFING's learnset updated to generation 7 (USUM)
+
 	db 1, POISON_GAS
 	db 1, TACKLE
 	db 4, SMOG
@@ -1613,10 +1418,9 @@ KoffingEvosAttacks:
 	db 34, SLUDGE_BOMB
 	db 37, EXPLOSION
 	db 40, DESTINY_BOND
-	db 0 ; no more level-up moves
 
-WeezingEvosAttacks:
-	db 0 ; no more evolutions
+- WEEZING's learnset updated to generation 7 (USUM)
+
 	db 1, POISON_GAS
 	db 1, TACKLE
 	db 1, SMOG
@@ -1629,11 +1433,9 @@ WeezingEvosAttacks:
 	db 34, SLUDGE_BOMB
 	db 40, EXPLOSION
 	db 46, DESTINY_BOND
-	db 0 ; no more level-up moves
 
-RhyhornEvosAttacks:
-	db EVOLVE_LEVEL, 42, RHYDON
-	db 0 ; no more evolutions
+- RHYHORN's learnset updated to generation 7 (USUM)
+
 	db 1, HORN_ATTACK
 	db 1, TAIL_WHIP
 	db 1, FURY_ATTACK
@@ -1645,10 +1447,9 @@ RhyhornEvosAttacks:
 	db 45, EARTHQUAKE
 	db 49, MEGAHORN
 	db 53, HORN_DRILL
-	db 0 ; no more level-up moves
 
-RhydonEvosAttacks:
-	db 0 ; no more evolutions
+- RHYDON's learnset updated to generation 7 (USUM)
+
 	db 1, HORN_DRILL
 	db 1, HORN_ATTACK
 	db 1, TAIL_WHIP
@@ -1661,11 +1462,9 @@ RhydonEvosAttacks:
 	db 48, EARTHQUAKE
 	db 55, MEGAHORN
 	db 62, HORN_DRILL
-	db 0 ; no more level-up moves
 
-ChanseyEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, BLISSEY
-	db 0 ; no more evolutions
+- CHANSEY's learnset updated to generation 7 (USUM)
+
 	db 1, DEFENSE_CURL
 	db 1, DOUBLE_EDGE
 	db 1, GROWL
@@ -1679,10 +1478,9 @@ ChanseyEvosAttacks:
 	db 44, EGG_BOMB
 	db 50, LIGHT_SCREEN
 	db 65, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-TangelaEvosAttacks:
-	db 0 ; no more evolutions
+- TANGELA's learnset updated to generation 7 (USUM)
+
 	db 1, CONSTRICT
 	db 4, SLEEP_POWDER
 	db 7, VINE_WHIP
@@ -1695,10 +1493,9 @@ TangelaEvosAttacks:
 	db 36, GIGA_DRAIN
 	db 38, ANCIENTPOWER
 	db 41, SLAM
-	db 0 ; no more level-up moves
 
-KangaskhanEvosAttacks:
-	db 0 ; no more evolutions
+- KANGASKHAN's learnset updated to generation 7 (USUM)
+
 	db 1, COMET_PUNCH
 	db 1, LEER
 	db 10, TAIL_WHIP
@@ -1710,11 +1507,9 @@ KangaskhanEvosAttacks:
 	db 43, ENDURE
 	db 46, OUTRAGE
 	db 50, REVERSAL
-	db 0 ; no more level-up moves
 
-HorseaEvosAttacks:
-	db EVOLVE_LEVEL, 32, SEADRA
-	db 0 ; no more evolutions
+- HORSEA's learnset updated to generation 7 (USUM)
+
 	db 1, BUBBLE
 	db 5, SMOKESCREEN
 	db 9, LEER
@@ -1724,11 +1519,9 @@ HorseaEvosAttacks:
 	db 26, FOCUS_ENERGY
 	db 36, AGILITY
 	db 52, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-SeadraEvosAttacks:
-	db EVOLVE_TRADE, DRAGON_SCALE, KINGDRA
-	db 0 ; no more evolutions
+- SEADRA's learnset updated to generation 7 (USUM)
+
 	db 1, HYDRO_PUMP
 	db 1, BUBBLE
 	db 1, SMOKESCREEN
@@ -1742,11 +1535,9 @@ SeadraEvosAttacks:
 	db 26, FOCUS_ENERGY
 	db 38, AGILITY
 	db 60, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-GoldeenEvosAttacks:
-	db EVOLVE_LEVEL, 33, SEAKING
-	db 0 ; no more evolutions
+- GOLDEEN's learnset updated to generation 7 (USUM)
+
 	db 1, PECK
 	db 1, TAIL_WHIP
 	db 5, SUPERSONIC
@@ -1757,10 +1548,9 @@ GoldeenEvosAttacks:
 	db 32, WATERFALL
 	db 37, HORN_DRILL
 	db 45, MEGAHORN
-	db 0 ; no more level-up moves
 
-SeakingEvosAttacks:
-	db 0 ; no more evolutions
+- SEAKING's learnset updated to generation 7 (USUM)
+
 	db 1, MEGAHORN
 	db 1, PECK
 	db 1, TAIL_WHIP
@@ -1773,11 +1563,9 @@ SeakingEvosAttacks:
 	db 32, WATERFALL
 	db 40, HORN_DRILL
 	db 54, MEGAHORN
-	db 0 ; no more level-up moves
 
-StaryuEvosAttacks:
-	db EVOLVE_ITEM, WATER_STONE, STARMIE
-	db 0 ; no more evolutions
+- STARYU's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, HARDEN
 	db 4, WATER_GUN
@@ -1791,20 +1579,18 @@ StaryuEvosAttacks:
 	db 42, PSYCHIC_M
 	db 46, LIGHT_SCREEN
 	db 53, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-StarmieEvosAttacks:
-	db 0 ; no more evolutions
+- STARMIE's learnset updated to generation 7 (USUM)
+
 	db 1, HYDRO_PUMP
 	db 1, WATER_GUN
 	db 1, RAPID_SPIN
 	db 1, RECOVER
 	db 1, SWIFT
 	db 40, CONFUSE_RAY
-	db 0 ; no more level-up moves
 
-MrMimeEvosAttacks:
-	db 0 ; no more evolutions
+- MRMIME's learnset updated to generation 7 (USUM)
+
 	db 1, BARRIER
 	db 1, POUND
 	db 1, CONFUSION
@@ -1820,11 +1606,9 @@ MrMimeEvosAttacks:
 	db 39, PSYCHIC_M
 	db 46, BATON_PASS
 	db 50, SAFEGUARD
-	db 0 ; no more level-up moves
 
-ScytherEvosAttacks:
-	db EVOLVE_TRADE, METAL_COAT, SCIZOR
-	db 0 ; no more evolutions
+- SCYTHER's learnset updated to generation 7 (USUM)
+
 	db 1, QUICK_ATTACK
 	db 1, LEER
 	db 5, FOCUS_ENERGY
@@ -1837,10 +1621,9 @@ ScytherEvosAttacks:
 	db 33, RAZOR_WIND
 	db 37, DOUBLE_TEAM
 	db 57, SWORDS_DANCE
-	db 0 ; no more level-up moves
 
-JynxEvosAttacks:
-	db 0 ; no more evolutions
+- JYNX's learnset updated to generation 7 (USUM)
+
 	db 1, PERISH_SONG
 	db 1, POUND
 	db 1, LICK
@@ -1855,10 +1638,9 @@ JynxEvosAttacks:
 	db 44, BODY_SLAM
 	db 55, PERISH_SONG
 	db 60, BLIZZARD
-	db 0 ; no more level-up moves
 
-ElectabuzzEvosAttacks:
-	db 0 ; no more evolutions
+- ELECTABUZZ's learnset updated to generation 7 (USUM)
+
 	db 1, QUICK_ATTACK
 	db 1, LEER
 	db 1, THUNDERSHOCK
@@ -1871,10 +1653,9 @@ ElectabuzzEvosAttacks:
 	db 42, SCREECH
 	db 49, THUNDERBOLT
 	db 55, THUNDER
-	db 0 ; no more level-up moves
 
-MagmarEvosAttacks:
-	db 0 ; no more evolutions
+- MAGMAR's learnset updated to generation 7 (USUM)
+
 	db 1, SMOG
 	db 1, LEER
 	db 1, EMBER
@@ -1887,10 +1668,9 @@ MagmarEvosAttacks:
 	db 42, SUNNY_DAY
 	db 49, FLAMETHROWER
 	db 55, FIRE_BLAST
-	db 0 ; no more level-up moves
 
-PinsirEvosAttacks:
-	db 0 ; no more evolutions
+- PINSIR's learnset updated to generation 7 (USUM)
+
 	db 1, VICEGRIP
 	db 1, FOCUS_ENERGY
 	db 4, BIND
@@ -1901,10 +1681,9 @@ PinsirEvosAttacks:
 	db 40, SWORDS_DANCE
 	db 43, THRASH
 	db 50, GUILLOTINE
-	db 0 ; no more level-up moves
 
-TaurosEvosAttacks:
-	db 0 ; no more evolutions
+- TAUROS's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 3, TAIL_WHIP
 	db 5, RAGE
@@ -1916,18 +1695,9 @@ TaurosEvosAttacks:
 	db 48, SWAGGER
 	db 55, THRASH
 	db 63, TAKE_DOWN
-	db 0 ; no more level-up moves
 
-MagikarpEvosAttacks:
-	db EVOLVE_LEVEL, 20, GYARADOS
-	db 0 ; no more evolutions
-	db 1, SPLASH
-	db 15, TACKLE
-	db 30, FLAIL
-	db 0 ; no more level-up moves
+- GYARADOS's learnset updated to generation 7 (USUM)
 
-GyaradosEvosAttacks:
-	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, THRASH
 	db 21, LEER
@@ -1938,10 +1708,9 @@ GyaradosEvosAttacks:
 	db 42, HYDRO_PUMP
 	db 51, RAIN_DANCE
 	db 54, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-LaprasEvosAttacks:
-	db 0 ; no more evolutions
+- LAPRAS's learnset updated to generation 7 (USUM)
+
 	db 1, SING
 	db 1, GROWL
 	db 1, WATER_GUN
@@ -1953,20 +1722,9 @@ LaprasEvosAttacks:
 	db 32, ICE_BEAM
 	db 43, SAFEGUARD
 	db 47, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-DittoEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TRANSFORM
-	db 0 ; no more level-up moves
+- EEVEE's learnset updated to generation 7 (USUM)
 
-EeveeEvosAttacks:
-	db EVOLVE_ITEM, THUNDERSTONE, JOLTEON
-	db EVOLVE_ITEM, WATER_STONE, VAPOREON
-	db EVOLVE_ITEM, FIRE_STONE, FLAREON
-	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
-	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
-	db 0 ; no more evolutions
 	db 1, GROWL
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -1978,10 +1736,9 @@ EeveeEvosAttacks:
 	db 29, CHARM
 	db 33, BATON_PASS
 	db 37, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-VaporeonEvosAttacks:
-	db 0 ; no more evolutions
+- VAPOREON's learnset updated to generation 7 (USUM)
+
 	db 1, WATER_GUN
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -1991,10 +1748,9 @@ VaporeonEvosAttacks:
 	db 29, ACID_ARMOR
 	db 33, HAZE
 	db 45, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-JolteonEvosAttacks:
-	db 0 ; no more evolutions
+- JOLTEON's learnset updated to generation 7 (USUM)
+
 	db 1, THUNDERSHOCK
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -2005,10 +1761,9 @@ JolteonEvosAttacks:
 	db 29, AGILITY
 	db 33, THUNDER_WAVE
 	db 45, THUNDER
-	db 0 ; no more level-up moves
 
-FlareonEvosAttacks:
-	db 0 ; no more evolutions
+- FLAREON's learnset updated to generation 7 (USUM)
+
 	db 1, EMBER
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -2018,11 +1773,9 @@ FlareonEvosAttacks:
 	db 25, FIRE_SPIN
 	db 29, SCARY_FACE
 	db 33, SMOG
-	db 0 ; no more level-up moves
 
-PorygonEvosAttacks:
-	db EVOLVE_TRADE, UP_GRADE, PORYGON2
-	db 0 ; no more evolutions
+- PORYGON's learnset updated to generation 7 (USUM)
+
 	db 1, CONVERSION2
 	db 1, TACKLE
 	db 1, CONVERSION
@@ -2033,11 +1786,9 @@ PorygonEvosAttacks:
 	db 45, LOCK_ON
 	db 50, TRI_ATTACK
 	db 62, ZAP_CANNON
-	db 0 ; no more level-up moves
 
-OmanyteEvosAttacks:
-	db EVOLVE_LEVEL, 40, OMASTAR
-	db 0 ; no more evolutions
+- OMANYTE's learnset updated to generation 7 (USUM)
+
 	db 1, CONSTRICT
 	db 1, WITHDRAW
 	db 7, BITE
@@ -2047,10 +1798,9 @@ OmanyteEvosAttacks:
 	db 34, PROTECT
 	db 37, ANCIENTPOWER
 	db 55, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-OmastarEvosAttacks:
-	db 0 ; no more evolutions
+- OMASTAR's learnset updated to generation 7 (USUM)
+
 	db 1, SPIKE_CANNON
 	db 1, HYDRO_PUMP
 	db 1, CONSTRICT
@@ -2063,11 +1813,9 @@ OmastarEvosAttacks:
 	db 34, PROTECT
 	db 37, ANCIENTPOWER
 	db 75, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-KabutoEvosAttacks:
-	db EVOLVE_LEVEL, 40, KABUTOPS
-	db 0 ; no more evolutions
+- KABUTO's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, HARDEN
 	db 6, ABSORB
@@ -2076,10 +1824,9 @@ KabutoEvosAttacks:
 	db 26, ENDURE
 	db 36, MEGA_DRAIN
 	db 46, ANCIENTPOWER
-	db 0 ; no more level-up moves
 
-KabutopsEvosAttacks:
-	db 0 ; no more evolutions
+- KABUTOPS's learnset updated to generation 7 (USUM)
+
 	db 1, SLASH
 	db 1, SCRATCH
 	db 1, HARDEN
@@ -2091,10 +1838,9 @@ KabutopsEvosAttacks:
 	db 26, ENDURE
 	db 36, MEGA_DRAIN
 	db 54, ANCIENTPOWER
-	db 0 ; no more level-up moves
 
-AerodactylEvosAttacks:
-	db 0 ; no more evolutions
+- AERODACTYL's learnset updated to generation 7 (USUM)
+
 	db 1, WING_ATTACK
 	db 1, SUPERSONIC
 	db 1, BITE
@@ -2106,10 +1852,9 @@ AerodactylEvosAttacks:
 	db 41, TAKE_DOWN
 	db 65, HYPER_BEAM
 	db 71, ROCK_SLIDE
-	db 0 ; no more level-up moves
 
-SnorlaxEvosAttacks:
-	db 0 ; no more evolutions
+- SNORLAX's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 4, DEFENSE_CURL
 	db 9, AMNESIA
@@ -2121,10 +1866,9 @@ SnorlaxEvosAttacks:
 	db 36, ROLLOUT
 	db 44, BELLY_DRUM
 	db 49, CRUNCH
-	db 0 ; no more level-up moves
 
-ArticunoEvosAttacks:
-	db 0 ; no more evolutions
+- ARTICUNO's learnset updated to generation 7 (USUM)
+
 	db 1, GUST
 	db 1, POWDER_SNOW
 	db 8, MIST
@@ -2134,10 +1878,9 @@ ArticunoEvosAttacks:
 	db 50, REFLECT
 	db 71, ICE_BEAM
 	db 78, BLIZZARD
-	db 0 ; no more level-up moves
 
-ZapdosEvosAttacks:
-	db 0 ; no more evolutions
+- ZAPDOS's learnset updated to generation 7 (USUM)
+
 	db 1, PECK
 	db 1, THUNDERSHOCK
 	db 8, THUNDER_WAVE
@@ -2149,10 +1892,9 @@ ZapdosEvosAttacks:
 	db 71, DRILL_PECK
 	db 78, THUNDER
 	db 99, ZAP_CANNON
-	db 0 ; no more level-up moves
 
-MoltresEvosAttacks:
-	db 0 ; no more evolutions
+- MOLTRES's learnset updated to generation 7 (USUM)
+
 	db 1, WING_ATTACK
 	db 1, EMBER
 	db 8, FIRE_SPIN
@@ -2164,11 +1906,9 @@ MoltresEvosAttacks:
 	db 57, SUNNY_DAY
 	db 71, SOLARBEAM
 	db 78, SKY_ATTACK
-	db 0 ; no more level-up moves
 
-DratiniEvosAttacks:
-	db EVOLVE_LEVEL, 30, DRAGONAIR
-	db 0 ; no more evolutions
+- DRATINI's learnset updated to generation 7 (USUM)
+
 	db 1, WRAP
 	db 1, LEER
 	db 5, THUNDER_WAVE
@@ -2179,11 +1919,9 @@ DratiniEvosAttacks:
 	db 45, SAFEGUARD
 	db 55, OUTRAGE
 	db 61, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-DragonairEvosAttacks:
-	db EVOLVE_LEVEL, 55, DRAGONITE
-	db 0 ; no more evolutions
+- DRAGONAIR's learnset updated to generation 7 (USUM)
+
 	db 1, WRAP
 	db 1, LEER
 	db 1, THUNDER_WAVE
@@ -2196,10 +1934,9 @@ DragonairEvosAttacks:
 	db 53, SAFEGUARD
 	db 67, OUTRAGE
 	db 75, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-DragoniteEvosAttacks:
-	db 0 ; no more evolutions
+- DRAGONITE's learnset updated to generation 7 (USUM)
+
 	db 1, WING_ATTACK
 	db 1, FIRE_PUNCH
 	db 1, THUNDERPUNCH
@@ -2215,10 +1952,9 @@ DragoniteEvosAttacks:
 	db 53, SAFEGUARD
 	db 67, OUTRAGE
 	db 75, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-MewtwoEvosAttacks:
-	db 0 ; no more evolutions
+- MEWTWO's learnset updated to generation 7 (USUM)
+
 	db 1, PSYWAVE
 	db 1, CONFUSION
 	db 1, DISABLE
@@ -2231,10 +1967,9 @@ MewtwoEvosAttacks:
 	db 64, BARRIER
 	db 79, AMNESIA
 	db 86, MIST
-	db 0 ; no more level-up moves
 
-MewEvosAttacks:
-	db 0 ; no more evolutions
+- MEW's learnset updated to generation 7 (USUM)
+
 	db 1, POUND
 	db 1, TRANSFORM
 	db 10, MEGA_PUNCH
@@ -2244,11 +1979,9 @@ MewEvosAttacks:
 	db 50, ANCIENTPOWER
 	db 60, AMNESIA
 	db 80, BATON_PASS
-	db 0 ; no more level-up moves
 
-ChikoritaEvosAttacks:
-	db EVOLVE_LEVEL, 16, BAYLEEF
-	db 0 ; no more evolutions
+- CHIKORITA's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, GROWL
 	db 6, RAZOR_LEAF
@@ -2260,11 +1993,9 @@ ChikoritaEvosAttacks:
 	db 34, BODY_SLAM
 	db 39, SAFEGUARD
 	db 45, SOLARBEAM
-	db 0 ; no more level-up moves
 
-BayleefEvosAttacks:
-	db EVOLVE_LEVEL, 32, MEGANIUM
-	db 0 ; no more evolutions
+- BAYLEEF's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, RAZOR_LEAF
@@ -2278,10 +2009,9 @@ BayleefEvosAttacks:
 	db 40, BODY_SLAM
 	db 46, SAFEGUARD
 	db 54, SOLARBEAM
-	db 0 ; no more level-up moves
 
-MeganiumEvosAttacks:
-	db 0 ; no more evolutions
+- MEGANIUM's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, RAZOR_LEAF
@@ -2295,11 +2025,9 @@ MeganiumEvosAttacks:
 	db 40, BODY_SLAM
 	db 46, SAFEGUARD
 	db 54, SOLARBEAM
-	db 0 ; no more level-up moves
 
-CyndaquilEvosAttacks:
-	db EVOLVE_LEVEL, 14, QUILAVA
-	db 0 ; no more evolutions
+- CYNDAQUIL's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, LEER
 	db 6, SMOKESCREEN
@@ -2311,11 +2039,9 @@ CyndaquilEvosAttacks:
 	db 40, FLAMETHROWER
 	db 49, ROLLOUT
 	db 55, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-QuilavaEvosAttacks:
-	db EVOLVE_LEVEL, 36, TYPHLOSION
-	db 0 ; no more evolutions
+- QUILAVA's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, LEER
 	db 1, SMOKESCREEN
@@ -2328,10 +2054,9 @@ QuilavaEvosAttacks:
 	db 46, FLAMETHROWER
 	db 57, ROLLOUT
 	db 64, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-TyphlosionEvosAttacks:
-	db 0 ; no more evolutions
+- TYPHLOSION's learnset updated to generation 7 (USUM)
+
 	db 1, DOUBLE_EDGE
 	db 1, TACKLE
 	db 1, LEER
@@ -2346,11 +2071,9 @@ TyphlosionEvosAttacks:
 	db 48, FLAMETHROWER
 	db 61, ROLLOUT
 	db 69, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-TotodileEvosAttacks:
-	db EVOLVE_LEVEL, 18, CROCONAW
-	db 0 ; no more evolutions
+- TOTODILE's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, LEER
 	db 6, WATER_GUN
@@ -2363,11 +2086,9 @@ TotodileEvosAttacks:
 	db 36, SCREECH
 	db 41, THRASH
 	db 50, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-CroconawEvosAttacks:
-	db EVOLVE_LEVEL, 30, FERALIGATR
-	db 0 ; no more evolutions
+- CROCONAW's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, WATER_GUN
@@ -2381,10 +2102,9 @@ CroconawEvosAttacks:
 	db 42, SCREECH
 	db 48, THRASH
 	db 60, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-FeraligatrEvosAttacks:
-	db 0 ; no more evolutions
+- FERALIGATR's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, WATER_GUN
@@ -2398,11 +2118,9 @@ FeraligatrEvosAttacks:
 	db 42, SCREECH
 	db 48, THRASH
 	db 60, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-SentretEvosAttacks:
-	db EVOLVE_LEVEL, 15, FURRET
-	db 0 ; no more evolutions
+- SENTRET's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, FORESIGHT
 	db 4, DEFENSE_CURL
@@ -2412,10 +2130,9 @@ SentretEvosAttacks:
 	db 28, REST
 	db 36, AMNESIA
 	db 39, BATON_PASS
-	db 0 ; no more level-up moves
 
-FurretEvosAttacks:
-	db 0 ; no more evolutions
+- FURRET's learnset updated to generation 7 (USUM)
+
 	db 1, AGILITY
 	db 1, SCRATCH
 	db 1, FORESIGHT
@@ -2428,11 +2145,9 @@ FurretEvosAttacks:
 	db 32, REST
 	db 42, AMNESIA
 	db 46, BATON_PASS
-	db 0 ; no more level-up moves
 
-HoothootEvosAttacks:
-	db EVOLVE_LEVEL, 20, NOCTOWL
-	db 0 ; no more evolutions
+- HOOTHOOT's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, FORESIGHT
@@ -2442,10 +2157,9 @@ HoothootEvosAttacks:
 	db 25, TAKE_DOWN
 	db 28, REFLECT
 	db 46, DREAM_EATER
-	db 0 ; no more level-up moves
 
-NoctowlEvosAttacks:
-	db 0 ; no more evolutions
+- NOCTOWL's learnset updated to generation 7 (USUM)
+
 	db 1, DREAM_EATER
 	db 1, SKY_ATTACK
 	db 1, TACKLE
@@ -2458,11 +2172,9 @@ NoctowlEvosAttacks:
 	db 27, TAKE_DOWN
 	db 31, REFLECT
 	db 55, DREAM_EATER
-	db 0 ; no more level-up moves
 
-LedybaEvosAttacks:
-	db EVOLVE_LEVEL, 18, LEDIAN
-	db 0 ; no more evolutions
+- LEDYBA's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 5, SUPERSONIC
 	db 8, SWIFT
@@ -2474,10 +2186,9 @@ LedybaEvosAttacks:
 	db 26, BATON_PASS
 	db 29, AGILITY
 	db 40, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-LedianEvosAttacks:
-	db 0 ; no more evolutions
+- LEDIAN's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, SUPERSONIC
 	db 1, SWIFT
@@ -2491,11 +2202,9 @@ LedianEvosAttacks:
 	db 29, BATON_PASS
 	db 33, AGILITY
 	db 47, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-SpinarakEvosAttacks:
-	db EVOLVE_LEVEL, 22, ARIADOS
-	db 0 ; no more evolutions
+- SPINARAK's learnset updated to generation 7 (USUM)
+
 	db 1, POISON_STING
 	db 1, STRING_SHOT
 	db 1, CONSTRICT
@@ -2507,10 +2216,9 @@ SpinarakEvosAttacks:
 	db 33, AGILITY
 	db 36, PIN_MISSILE
 	db 40, PSYCHIC_M
-	db 0 ; no more level-up moves
 
-AriadosEvosAttacks:
-	db 0 ; no more evolutions
+- ARIADOS's learnset updated to generation 7 (USUM)
+
 	db 1, SWORDS_DANCE
 	db 1, POISON_STING
 	db 1, STRING_SHOT
@@ -2524,10 +2232,9 @@ AriadosEvosAttacks:
 	db 37, AGILITY
 	db 41, PIN_MISSILE
 	db 46, PSYCHIC_M
-	db 0 ; no more level-up moves
 
-CrobatEvosAttacks:
-	db 0 ; no more evolutions
+- CROBAT's learnset updated to generation 7 (USUM)
+
 	db 1, SCREECH
 	db 1, ABSORB
 	db 1, SUPERSONIC
@@ -2540,11 +2247,9 @@ CrobatEvosAttacks:
 	db 32, MEAN_LOOK
 	db 35, LEECH_LIFE
 	db 40, HAZE
-	db 0 ; no more level-up moves
 
-ChinchouEvosAttacks:
-	db EVOLVE_LEVEL, 27, LANTURN
-	db 0 ; no more evolutions
+- CHINCHOU's learnset updated to generation 7 (USUM)
+
 	db 1, BUBBLE
 	db 1, SUPERSONIC
 	db 6, THUNDER_WAVE
@@ -2555,10 +2260,9 @@ ChinchouEvosAttacks:
 	db 31, FLAIL
 	db 39, TAKE_DOWN
 	db 45, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-LanturnEvosAttacks:
-	db 0 ; no more evolutions
+- LANTURN's learnset updated to generation 7 (USUM)
+
 	db 1, BUBBLE
 	db 1, SUPERSONIC
 	db 1, THUNDER_WAVE
@@ -2570,41 +2274,33 @@ LanturnEvosAttacks:
 	db 33, FLAIL
 	db 43, TAKE_DOWN
 	db 51, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-PichuEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, PIKACHU
-	db 0 ; no more evolutions
+- PICHU's learnset updated to generation 7 (USUM)
+
 	db 1, THUNDERSHOCK
 	db 1, CHARM
 	db 5, TAIL_WHIP
 	db 10, SWEET_KISS
 	db 18, THUNDER_WAVE
-	db 0 ; no more level-up moves
 
-CleffaEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
-	db 0 ; no more evolutions
+- CLEFFA's learnset updated to generation 7 (USUM)
+
 	db 1, POUND
 	db 1, CHARM
 	db 4, ENCORE
 	db 7, SING
 	db 10, SWEET_KISS
-	db 0 ; no more level-up moves
 
-IgglybuffEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
-	db 0 ; no more evolutions
+- IGGLYBUFF's learnset updated to generation 7 (USUM)
+
 	db 1, SING
 	db 1, CHARM
 	db 3, DEFENSE_CURL
 	db 5, POUND
 	db 9, SWEET_KISS
-	db 0 ; no more level-up moves
 
-TogepiEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, TOGETIC
-	db 0 ; no more evolutions
+- TOGEPI's learnset updated to generation 7 (USUM)
+
 	db 1, GROWL
 	db 1, CHARM
 	db 5, METRONOME
@@ -2614,10 +2310,9 @@ TogepiEvosAttacks:
 	db 37, SAFEGUARD
 	db 41, BATON_PASS
 	db 45, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-TogeticEvosAttacks:
-	db 0 ; no more evolutions
+- TOGETIC's learnset updated to generation 7 (USUM)
+
 	db 1, GROWL
 	db 1, CHARM
 	db 1, METRONOME
@@ -2629,11 +2324,9 @@ TogeticEvosAttacks:
 	db 37, SAFEGUARD
 	db 41, BATON_PASS
 	db 45, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-NatuEvosAttacks:
-	db EVOLVE_LEVEL, 25, XATU
-	db 0 ; no more evolutions
+- NATU's learnset updated to generation 7 (USUM)
+
 	db 1, PECK
 	db 1, LEER
 	db 6, NIGHT_SHADE
@@ -2641,10 +2334,9 @@ NatuEvosAttacks:
 	db 23, CONFUSE_RAY
 	db 33, PSYCHIC_M
 	db 44, FUTURE_SIGHT
-	db 0 ; no more level-up moves
 
-XatuEvosAttacks:
-	db 0 ; no more evolutions
+- XATU's learnset updated to generation 7 (USUM)
+
 	db 1, PECK
 	db 1, LEER
 	db 1, NIGHT_SHADE
@@ -2654,11 +2346,9 @@ XatuEvosAttacks:
 	db 23, CONFUSE_RAY
 	db 35, PSYCHIC_M
 	db 49, FUTURE_SIGHT
-	db 0 ; no more level-up moves
 
-MareepEvosAttacks:
-	db EVOLVE_LEVEL, 15, FLAAFFY
-	db 0 ; no more evolutions
+- MAREEP's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, GROWL
 	db 4, THUNDER_WAVE
@@ -2668,11 +2358,9 @@ MareepEvosAttacks:
 	db 25, CONFUSE_RAY
 	db 43, LIGHT_SCREEN
 	db 46, THUNDER
-	db 0 ; no more level-up moves
 
-FlaaffyEvosAttacks:
-	db EVOLVE_LEVEL, 30, AMPHAROS
-	db 0 ; no more evolutions
+- FLAAFFY's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, THUNDER_WAVE
@@ -2684,10 +2372,9 @@ FlaaffyEvosAttacks:
 	db 29, CONFUSE_RAY
 	db 52, LIGHT_SCREEN
 	db 56, THUNDER
-	db 0 ; no more level-up moves
 
-AmpharosEvosAttacks:
-	db 0 ; no more evolutions
+- AMPHAROS's learnset updated to generation 7 (USUM)
+
 	db 1, THUNDERPUNCH
 	db 1, ZAP_CANNON
 	db 1, FIRE_PUNCH
@@ -2702,20 +2389,17 @@ AmpharosEvosAttacks:
 	db 29, CONFUSE_RAY
 	db 57, LIGHT_SCREEN
 	db 62, THUNDER
-	db 0 ; no more level-up moves
 
-BellossomEvosAttacks:
-	db 0 ; no more evolutions
+- BELLOSSOM's learnset updated to generation 7 (USUM)
+
 	db 1, MEGA_DRAIN
 	db 1, SWEET_SCENT
 	db 1, STUN_SPORE
 	db 1, SUNNY_DAY
 	db 59, PETAL_DANCE
-	db 0 ; no more level-up moves
 
-MarillEvosAttacks:
-	db EVOLVE_LEVEL, 18, AZUMARILL
-	db 0 ; no more evolutions
+- MARILL's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, WATER_GUN
 	db 2, TAIL_WHIP
@@ -2726,10 +2410,9 @@ MarillEvosAttacks:
 	db 31, RAIN_DANCE
 	db 37, DOUBLE_EDGE
 	db 47, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-AzumarillEvosAttacks:
-	db 0 ; no more evolutions
+- AZUMARILL's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 1, WATER_GUN
@@ -2741,10 +2424,9 @@ AzumarillEvosAttacks:
 	db 35, RAIN_DANCE
 	db 42, DOUBLE_EDGE
 	db 55, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-SudowoodoEvosAttacks:
-	db 0 ; no more evolutions
+- SUDOWOODO's learnset updated to generation 7 (USUM)
+
 	db 1, SLAM
 	db 1, FLAIL
 	db 1, LOW_KICK
@@ -2757,20 +2439,17 @@ SudowoodoEvosAttacks:
 	db 33, ROCK_SLIDE
 	db 36, COUNTER
 	db 43, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-PolitoedEvosAttacks:
-	db 0 ; no more evolutions
+- POLITOED's learnset updated to generation 7 (USUM)
+
 	db 1, BUBBLEBEAM
 	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
 	db 1, PERISH_SONG
 	db 27, SWAGGER
-	db 0 ; no more level-up moves
 
-HoppipEvosAttacks: 
-	db EVOLVE_LEVEL, 18, SKIPLOOM
-	db 0 ; no more evolutions
+- HOPPIP's learnset updated to generation 7 (USUM)
+
 	db 1, ABSORB
 	db 1, SPLASH
 	db 4, SYNTHESIS
@@ -2783,11 +2462,9 @@ HoppipEvosAttacks:
 	db 25, MEGA_DRAIN
 	db 34, COTTON_SPORE
 	db 43, GIGA_DRAIN
-	db 0 ; no more level-up moves
 
-SkiploomEvosAttacks:
-	db EVOLVE_LEVEL, 27, JUMPLUFF
-	db 0 ; no more evolutions
+- SKIPLOOM's learnset updated to generation 7 (USUM)
+
 	db 1, ABSORB
 	db 1, SPLASH
 	db 1, SYNTHESIS
@@ -2802,10 +2479,9 @@ SkiploomEvosAttacks:
 	db 28, MEGA_DRAIN
 	db 40, COTTON_SPORE
 	db 52, GIGA_DRAIN
-	db 0 ; no more level-up moves
 
-JumpluffEvosAttacks:
-	db 0 ; no more evolutions
+- JUMPLUFF's learnset updated to generation 7 (USUM)
+
 	db 1, ABSORB
 	db 1, SPLASH
 	db 1, SYNTHESIS
@@ -2820,10 +2496,9 @@ JumpluffEvosAttacks:
 	db 29, MEGA_DRAIN
 	db 44, COTTON_SPORE
 	db 59, GIGA_DRAIN
-	db 0 ; no more level-up moves
 
-AipomEvosAttacks:
-	db 0 ; no more evolutions
+- AIPOM's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, TAIL_WHIP
 	db 4, SAND_ATTACK
@@ -2832,11 +2507,9 @@ AipomEvosAttacks:
 	db 22, SWIFT
 	db 25, SCREECH
 	db 29, AGILITY
-	db 0 ; no more level-up moves
 
-SunkernEvosAttacks:
-	db EVOLVE_ITEM, SUN_STONE, SUNFLORA
-	db 0 ; no more evolutions
+- SUNKERN's learnset updated to generation 7 (USUM)
+
 	db 1, ABSORB
 	db 1, GROWTH
 	db 10, MEGA_DRAIN
@@ -2847,10 +2520,9 @@ SunkernEvosAttacks:
 	db 34, SOLARBEAM
 	db 37, DOUBLE_EDGE
 	db 40, SUNNY_DAY
-	db 0 ; no more level-up moves
 
-SunfloraEvosAttacks:
-	db 0 ; no more evolutions
+- SUNFLORA's learnset updated to generation 7 (USUM)
+
 	db 1, ABSORB
 	db 1, POUND
 	db 1, GROWTH
@@ -2862,10 +2534,9 @@ SunfloraEvosAttacks:
 	db 34, SOLARBEAM
 	db 37, DOUBLE_EDGE
 	db 40, SUNNY_DAY
-	db 0 ; no more level-up moves
 
-YanmaEvosAttacks:
-	db 0 ; no more evolutions
+- YANMA's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, FORESIGHT
 	db 6, QUICK_ATTACK
@@ -2878,11 +2549,9 @@ YanmaEvosAttacks:
 	db 38, HYPNOSIS
 	db 43, WING_ATTACK
 	db 46, SCREECH
-	db 0 ; no more level-up moves
 
-WooperEvosAttacks:
-	db EVOLVE_LEVEL, 20, QUAGSIRE
-	db 0 ; no more evolutions
+- WOOPER's learnset updated to generation 7 (USUM)
+
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
 	db 15, SLAM
@@ -2891,10 +2560,9 @@ WooperEvosAttacks:
 	db 37, RAIN_DANCE
 	db 43, MIST
 	db 43, HAZE
-	db 0 ; no more level-up moves
 
-QuagsireEvosAttacks:
-	db 0 ; no more evolutions
+- QUAGSIRE's learnset updated to generation 7 (USUM)
+
 	db 1, WATER_GUN
 	db 1, TAIL_WHIP
 	db 15, SLAM
@@ -2903,10 +2571,9 @@ QuagsireEvosAttacks:
 	db 41, RAIN_DANCE
 	db 48, MIST
 	db 48, HAZE
-	db 0 ; no more level-up moves
 
-EspeonEvosAttacks:
-	db 0 ; no more evolutions
+- ESPEON's learnset updated to generation 7 (USUM)
+
 	db 1, CONFUSION
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -2918,10 +2585,9 @@ EspeonEvosAttacks:
 	db 29, PSYCH_UP
 	db 33, MORNING_SUN
 	db 37, PSYCHIC_M
-	db 0 ; no more level-up moves
 
-UmbreonEvosAttacks:
-	db 0 ; no more evolutions
+- UMBREON's learnset updated to generation 7 (USUM)
+
 	db 1, PURSUIT
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -2932,10 +2598,9 @@ UmbreonEvosAttacks:
 	db 29, SCREECH
 	db 33, MOONLIGHT
 	db 37, MEAN_LOOK
-	db 0 ; no more level-up moves
 
-MurkrowEvosAttacks:
-	db 0 ; no more evolutions
+- MURKROW's learnset updated to generation 7 (USUM)
+
 	db 1, PECK
 	db 5, PURSUIT
 	db 11, HAZE
@@ -2943,10 +2608,9 @@ MurkrowEvosAttacks:
 	db 21, NIGHT_SHADE
 	db 35, FAINT_ATTACK
 	db 41, MEAN_LOOK
-	db 0 ; no more level-up moves
 
-SlowkingEvosAttacks:
-	db 0 ; no more evolutions
+- SLOWKING's learnset updated to generation 7 (USUM)
+
 	db 1, HIDDEN_POWER
 	db 1, CURSE
 	db 1, TACKLE
@@ -2958,10 +2622,9 @@ SlowkingEvosAttacks:
 	db 41, SWAGGER
 	db 45, PSYCHIC_M
 	db 54, PSYCH_UP
-	db 0 ; no more level-up moves
 
-MisdreavusEvosAttacks:
-	db 0 ; no more evolutions
+- MISDREAVUS's learnset updated to generation 7 (USUM)
+
 	db 1, GROWL
 	db 1, PSYWAVE
 	db 5, SPITE
@@ -2971,23 +2634,20 @@ MisdreavusEvosAttacks:
 	db 32, PAIN_SPLIT
 	db 41, SHADOW_BALL
 	db 46, PERISH_SONG
-	db 0 ; no more level-up moves
 
-UnownEvosAttacks:
-	db 0 ; no more evolutions
+- UNOWN's learnset updated to generation 7 (USUM)
+
 	db 1, HIDDEN_POWER
-	db 0 ; no more level-up moves
 
-WobbuffetEvosAttacks:
-	db 0 ; no more evolutions
+- WOBBUFFET's learnset updated to generation 7 (USUM)
+
 	db 1, COUNTER
 	db 1, MIRROR_COAT
 	db 1, SAFEGUARD
 	db 1, DESTINY_BOND
-	db 0 ; no more level-up moves
 
-GirafarigEvosAttacks:
-	db 0 ; no more evolutions
+- GIRAFARIG's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, CONFUSION
@@ -2997,11 +2657,9 @@ GirafarigEvosAttacks:
 	db 37, CRUNCH
 	db 41, BATON_PASS
 	db 50, PSYCHIC_M
-	db 0 ; no more level-up moves
 
-PinecoEvosAttacks:
-	db EVOLVE_LEVEL, 31, FORRETRESS
-	db 0 ; no more evolutions
+- PINECO's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, PROTECT
 	db 6, SELFDESTRUCT
@@ -3011,10 +2669,9 @@ PinecoEvosAttacks:
 	db 28, SPIKES
 	db 34, EXPLOSION
 	db 45, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-ForretressEvosAttacks:
-	db 0 ; no more evolutions
+- FORRETRESS's learnset updated to generation 7 (USUM)
+
 	db 1, ZAP_CANNON
 	db 1, TACKLE
 	db 1, PROTECT
@@ -3027,10 +2684,9 @@ ForretressEvosAttacks:
 	db 36, EXPLOSION
 	db 50, DOUBLE_EDGE
 	db 60, ZAP_CANNON
-	db 0 ; no more level-up moves
 
-DunsparceEvosAttacks:
-	db 0 ; no more evolutions
+- DUNSPARCE's learnset updated to generation 7 (USUM)
+
 	db 1, RAGE
 	db 1, DEFENSE_CURL
 	db 3, ROLLOUT
@@ -3046,10 +2702,9 @@ DunsparceEvosAttacks:
 	db 38, DOUBLE_EDGE
 	db 48, ENDURE
 	db 51, FLAIL
-	db 0 ; no more level-up moves
 
-GligarEvosAttacks:
-	db 0 ; no more evolutions
+- GLIGAR's learnset updated to generation 7 (USUM)
+
 	db 1, POISON_STING
 	db 4, SAND_ATTACK
 	db 7, HARDEN
@@ -3060,10 +2715,9 @@ GligarEvosAttacks:
 	db 35, SCREECH
 	db 50, SWORDS_DANCE
 	db 55, GUILLOTINE
-	db 0 ; no more level-up moves
 
-SteelixEvosAttacks:
-	db 0 ; no more evolutions
+- STEELIX's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, HARDEN
 	db 1, BIND
@@ -3078,11 +2732,9 @@ SteelixEvosAttacks:
 	db 43, DIG
 	db 49, DOUBLE_EDGE
 	db 52, SANDSTORM
-	db 0 ; no more level-up moves
 
-SnubbullEvosAttacks:
-	db EVOLVE_LEVEL, 23, GRANBULL
-	db 0 ; no more evolutions
+- SNUBBULL's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, SCARY_FACE
 	db 1, TAIL_WHIP
@@ -3093,10 +2745,9 @@ SnubbullEvosAttacks:
 	db 25, ROAR
 	db 31, RAGE
 	db 49, CRUNCH
-	db 0 ; no more level-up moves
 
-GranbullEvosAttacks:
-	db 0 ; no more evolutions
+- GRANBULL's learnset updated to generation 7 (USUM)
+
 	db 1, OUTRAGE
 	db 1, TACKLE
 	db 1, SCARY_FACE
@@ -3109,10 +2760,9 @@ GranbullEvosAttacks:
 	db 35, RAGE
 	db 59, CRUNCH
 	db 67, OUTRAGE
-	db 0 ; no more level-up moves
 
-QwilfishEvosAttacks:
-	db 0 ; no more evolutions
+- QWILFISH's learnset updated to generation 7 (USUM)
+
 	db 1, HYDRO_PUMP
 	db 1, DESTINY_BOND
 	db 1, WATER_GUN
@@ -3127,10 +2777,9 @@ QwilfishEvosAttacks:
 	db 41, TAKE_DOWN
 	db 53, DESTINY_BOND
 	db 57, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-ScizorEvosAttacks:
-	db 0 ; no more evolutions
+- SCIZOR's learnset updated to generation 7 (USUM)
+
 	db 1, QUICK_ATTACK
 	db 1, LEER
 	db 5, FOCUS_ENERGY
@@ -3142,10 +2791,9 @@ ScizorEvosAttacks:
 	db 29, SLASH
 	db 33, RAZOR_WIND
 	db 57, SWORDS_DANCE
-	db 0 ; no more level-up moves
 
-ShuckleEvosAttacks:
-	db 0 ; no more evolutions
+- SHUCKLE's learnset updated to generation 7 (USUM)
+
 	db 1, WITHDRAW
 	db 1, CONSTRICT
 	db 1, BIDE
@@ -3156,10 +2804,9 @@ ShuckleEvosAttacks:
 	db 20, REST
 	db 23, ROCK_THROW
 	db 38, ROCK_SLIDE
-	db 0 ; no more level-up moves
 
-HeracrossEvosAttacks:
-	db 0 ; no more evolutions
+- HERACROSS's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, LEER
 	db 1, HORN_ATTACK
@@ -3170,10 +2817,9 @@ HeracrossEvosAttacks:
 	db 34, TAKE_DOWN
 	db 37, MEGAHORN
 	db 46, REVERSAL
-	db 0 ; no more level-up moves
 
-SneaselEvosAttacks:
-	db 0 ; no more evolutions
+- SNEASEL's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, QUICK_ATTACK
@@ -3185,11 +2831,9 @@ SneaselEvosAttacks:
 	db 28, BEAT_UP
 	db 32, SCREECH
 	db 35, SLASH
-	db 0 ; no more level-up moves
 
-TeddiursaEvosAttacks:
-	db EVOLVE_LEVEL, 30, URSARING
-	db 0 ; no more evolutions
+- TEDDIURSA's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, LICK
 	db 8, FURY_SWIPES
@@ -3200,10 +2844,9 @@ TeddiursaEvosAttacks:
 	db 43, REST
 	db 43, SNORE
 	db 50, THRASH
-	db 0 ; no more level-up moves
 
-UrsaringEvosAttacks:
-	db 0 ; no more evolutions
+- URSARING's learnset updated to generation 7 (USUM)
+
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, LICK
@@ -3215,11 +2858,9 @@ UrsaringEvosAttacks:
 	db 47, REST
 	db 49, SNORE
 	db 58, THRASH
-	db 0 ; no more level-up moves
 
-SlugmaEvosAttacks:
-	db EVOLVE_LEVEL, 38, MAGCARGO
-	db 0 ; no more evolutions
+- SLUGMA's learnset updated to generation 7 (USUM)
+
 	db 1, SMOG
 	db 6, EMBER
 	db 8, ROCK_THROW
@@ -3230,10 +2871,9 @@ SlugmaEvosAttacks:
 	db 41, BODY_SLAM
 	db 43, RECOVER
 	db 48, FLAMETHROWER
-	db 0 ; no more level-up moves
 
-MagcargoEvosAttacks:
-	db 0 ; no more evolutions
+- MAGCARGO's learnset updated to generation 7 (USUM)
+
 	db 1, SMOG
 	db 1, EMBER
 	db 1, ROCK_THROW
@@ -3246,11 +2886,9 @@ MagcargoEvosAttacks:
 	db 43, BODY_SLAM
 	db 47, RECOVER
 	db 54, FLAMETHROWER
-	db 0 ; no more level-up moves
 
-SwinubEvosAttacks:
-	db EVOLVE_LEVEL, 33, PILOSWINE
-	db 0 ; no more evolutions
+- SWINUB's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 8, POWDER_SNOW
 	db 11, MUD_SLAP
@@ -3262,10 +2900,9 @@ SwinubEvosAttacks:
 	db 40, FLAIL
 	db 44, BLIZZARD
 	db 48, AMNESIA
-	db 0 ; no more level-up moves
 
-PiloswineEvosAttacks:
-	db 0 ; no more evolutions
+- PILOSWINE's learnset updated to generation 7 (USUM)
+
 	db 1, FURY_ATTACK
 	db 1, ANCIENTPOWER
 	db 1, PECK
@@ -3280,10 +2917,9 @@ PiloswineEvosAttacks:
 	db 46, EARTHQUAKE
 	db 52, BLIZZARD
 	db 58, AMNESIA
-	db 0 ; no more level-up moves
 
-CorsolaEvosAttacks:
-	db 0 ; no more evolutions
+- CORSOLA's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, HARDEN
 	db 4, BUBBLE
@@ -3294,11 +2930,9 @@ CorsolaEvosAttacks:
 	db 35, ENDURE
 	db 45, MIRROR_COAT
 	db 50, FLAIL
-	db 0 ; no more level-up moves
 
-RemoraidEvosAttacks:
-	db EVOLVE_LEVEL, 25, OCTILLERY
-	db 0 ; no more evolutions
+- REMORAID's learnset updated to generation 7 (USUM)
+
 	db 1, WATER_GUN
 	db 6, LOCK_ON
 	db 10, PSYBEAM
@@ -3308,10 +2942,9 @@ RemoraidEvosAttacks:
 	db 34, ICE_BEAM
 	db 42, HYDRO_PUMP
 	db 46, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-OctilleryEvosAttacks:
-	db 0 ; no more evolutions
+- OCTILLERY's learnset updated to generation 7 (USUM)
+
 	db 1, OCTAZOOKA
 	db 1, WATER_GUN
 	db 1, CONSTRICT
@@ -3325,16 +2958,14 @@ OctilleryEvosAttacks:
 	db 40, ICE_BEAM
 	db 52, HYDRO_PUMP
 	db 58, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-DelibirdEvosAttacks:
-	db 0 ; no more evolutions
+- DELIBIRD's learnset updated to generation 7 (USUM)
+
 	db 1, PRESENT
 	db 25, DRILL_PECK
-	db 0 ; no more level-up moves
 
-MantineEvosAttacks:
-	db 0 ; no more evolutions
+- MANTINE's learnset updated to generation 7 (USUM)
+
 	db 1, PSYBEAM
 	db 1, TACKLE
 	db 1, BUBBLE
@@ -3348,10 +2979,9 @@ MantineEvosAttacks:
 	db 27, TAKE_DOWN
 	db 32, AGILITY
 	db 49, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-SkarmoryEvosAttacks:
-	db 0 ; no more evolutions
+- SKARMORY's learnset updated to generation 7 (USUM)
+
 	db 1, LEER
 	db 1, PECK
 	db 6, SAND_ATTACK
@@ -3362,11 +2992,9 @@ SkarmoryEvosAttacks:
 	db 31, AGILITY
 	db 34, STEEL_WING
 	db 39, SLASH
-	db 0 ; no more level-up moves
 
-HoundourEvosAttacks:
-	db EVOLVE_LEVEL, 24, HOUNDOOM
-	db 0 ; no more evolutions
+- HOUNDOUR's learnset updated to generation 7 (USUM)
+
 	db 1, LEER
 	db 1, EMBER
 	db 8, SMOG
@@ -3376,10 +3004,9 @@ HoundourEvosAttacks:
 	db 32, FAINT_ATTACK
 	db 44, FLAMETHROWER
 	db 49, CRUNCH
-	db 0 ; no more level-up moves
 
-HoundoomEvosAttacks:
-	db 0 ; no more evolutions
+- HOUNDOOM's learnset updated to generation 7 (USUM)
+
 	db 1, LEER
 	db 1, EMBER
 	db 1, SMOG
@@ -3390,10 +3017,9 @@ HoundoomEvosAttacks:
 	db 35, FAINT_ATTACK
 	db 50, FLAMETHROWER
 	db 56, CRUNCH
-	db 0 ; no more level-up moves
 
-KingdraEvosAttacks:
-	db 0 ; no more evolutions
+- KINGDRA's learnset updated to generation 7 (USUM)
+
 	db 1, HYDRO_PUMP
 	db 1, BUBBLE
 	db 1, SMOKESCREEN
@@ -3407,11 +3033,9 @@ KingdraEvosAttacks:
 	db 26, FOCUS_ENERGY
 	db 38, AGILITY
 	db 60, HYDRO_PUMP
-	db 0 ; no more level-up moves
 
-PhanpyEvosAttacks:
-	db EVOLVE_LEVEL, 25, DONPHAN
-	db 0 ; no more evolutions
+- PHANPY's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, DEFENSE_CURL
@@ -3422,10 +3046,9 @@ PhanpyEvosAttacks:
 	db 28, TAKE_DOWN
 	db 33, CHARM
 	db 42, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-DonphanEvosAttacks:
-	db 0 ; no more evolutions
+- DONPHAN's learnset updated to generation 7 (USUM)
+
 	db 1, FURY_ATTACK
 	db 1, HORN_ATTACK
 	db 1, GROWL
@@ -3436,10 +3059,9 @@ DonphanEvosAttacks:
 	db 30, MAGNITUDE
 	db 37, SCARY_FACE
 	db 43, EARTHQUAKE
-	db 0 ; no more level-up moves
 
-Porygon2EvosAttacks:
-	db 0 ; no more evolutions
+- PORYGON2's learnset updated to generation 7 (USUM)
+
 	db 1, ZAP_CANNON
 	db 1, CONVERSION2
 	db 1, TACKLE
@@ -3452,10 +3074,9 @@ Porygon2EvosAttacks:
 	db 50, TRI_ATTACK
 	db 62, ZAP_CANNON
 	db 67, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-StantlerEvosAttacks:
-	db 0 ; no more evolutions
+- STANTLER's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 3, LEER
 	db 10, HYPNOSIS
@@ -3464,33 +3085,14 @@ StantlerEvosAttacks:
 	db 21, TAKE_DOWN
 	db 23, CONFUSE_RAY
 	db 43, JUMP_KICK
-	db 0 ; no more level-up moves
 
-SmeargleEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, SKETCH
-	db 11, SKETCH
-	db 21, SKETCH
-	db 31, SKETCH
-	db 41, SKETCH
-	db 51, SKETCH
-	db 61, SKETCH
-	db 71, SKETCH
-	db 81, SKETCH
-	db 91, SKETCH
-	db 0 ; no more level-up moves
+- TYROGUE's learnset updated to generation 7 (USUM)
 
-TyrogueEvosAttacks:
-	db EVOLVE_STAT, 20, ATK_LT_DEF, HITMONCHAN
-	db EVOLVE_STAT, 20, ATK_GT_DEF, HITMONLEE
-	db EVOLVE_STAT, 20, ATK_EQ_DEF, HITMONTOP
-	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, FORESIGHT
-	db 0 ; no more level-up moves
 
-HitmontopEvosAttacks:
-	db 0 ; no more evolutions
+- HITMONTOP's learnset updated to generation 7 (USUM)
+
 	db 1, ROLLING_KICK
 	db 1, DETECT
 	db 1, FOCUS_ENERGY
@@ -3504,11 +3106,9 @@ HitmontopEvosAttacks:
 	db 33, TRIPLE_KICK
 	db 37, AGILITY
 	db 50, DETECT
-	db 0 ; no more level-up moves
 
-SmoochumEvosAttacks:
-	db EVOLVE_LEVEL, 30, JYNX
-	db 0 ; no more evolutions
+- SMOOCHUM's learnset updated to generation 7 (USUM)
+
 	db 1, POUND
 	db 5, LICK
 	db 8, SWEET_KISS
@@ -3519,11 +3119,9 @@ SmoochumEvosAttacks:
 	db 38, PSYCHIC_M
 	db 45, PERISH_SONG
 	db 48, BLIZZARD
-	db 0 ; no more level-up moves
 
-ElekidEvosAttacks:
-	db EVOLVE_LEVEL, 30, ELECTABUZZ
-	db 0 ; no more evolutions
+- ELEKID's learnset updated to generation 7 (USUM)
+
 	db 1, QUICK_ATTACK
 	db 1, LEER
 	db 5, THUNDERPUNCH
@@ -3535,11 +3133,9 @@ ElekidEvosAttacks:
 	db 36, SCREECH
 	db 40, THUNDERBOLT
 	db 43, THUNDER
-	db 0 ; no more level-up moves
 
-MagbyEvosAttacks:
-	db EVOLVE_LEVEL, 30, MAGMAR
-	db 0 ; no more evolutions
+- MAGBY's learnset updated to generation 7 (USUM)
+
 	db 1, SMOG
 	db 1, LEER
 	db 5, EMBER
@@ -3551,10 +3147,9 @@ MagbyEvosAttacks:
 	db 36, SUNNY_DAY
 	db 40, FLAMETHROWER
 	db 43, FIRE_BLAST
-	db 0 ; no more level-up moves
 
-MiltankEvosAttacks:
-	db 0 ; no more evolutions
+- MILTANK's learnset updated to generation 7 (USUM)
+
 	db 1, TACKLE
 	db 3, GROWL
 	db 5, DEFENSE_CURL
@@ -3564,10 +3159,9 @@ MiltankEvosAttacks:
 	db 19, ROLLOUT
 	db 24, BODY_SLAM
 	db 48, HEAL_BELL
-	db 0 ; no more level-up moves
 
-BlisseyEvosAttacks:
-	db 0 ; no more evolutions
+- BLISSEY's learnset updated to generation 7 (USUM)
+
 	db 1, DEFENSE_CURL
 	db 1, DOUBLE_EDGE
 	db 1, GROWL
@@ -3581,10 +3175,9 @@ BlisseyEvosAttacks:
 	db 44, EGG_BOMB
 	db 50, LIGHT_SCREEN
 	db 65, DOUBLE_EDGE
-	db 0 ; no more level-up moves
 
-RaikouEvosAttacks:
-	db 0 ; no more evolutions
+- RAIKOU's learnset updated to generation 7 (USUM)
+
 	db 1, BITE
 	db 1, LEER
 	db 8, THUNDERSHOCK
@@ -3595,10 +3188,9 @@ RaikouEvosAttacks:
 	db 43, CRUNCH
 	db 71, RAIN_DANCE
 	db 85, THUNDER
-	db 0 ; no more level-up moves
 
-EnteiEvosAttacks:
-	db 0 ; no more evolutions
+- ENTEI's learnset updated to generation 7 (USUM)
+
 	db 1, SACRED_FIRE
 	db 1, BITE
 	db 1, LEER
@@ -3609,10 +3201,9 @@ EnteiEvosAttacks:
 	db 36, FLAMETHROWER
 	db 43, SWAGGER
 	db 71, FIRE_BLAST
-	db 0 ; no more level-up moves
 
-SuicuneEvosAttacks:
-	db 0 ; no more evolutions
+- SUICUNE's learnset updated to generation 7 (USUM)
+
 	db 1, BITE
 	db 1, LEER
 	db 1, BUBBLEBEAM
@@ -3625,11 +3216,9 @@ SuicuneEvosAttacks:
 	db 43, MIRROR_COAT
 	db 71, HYDRO_PUMP
 	db 85, BLIZZARD
-	db 0 ; no more level-up moves
 
-LarvitarEvosAttacks:
-	db EVOLVE_LEVEL, 30, PUPITAR
-	db 0 ; no more evolutions
+- LARVITAR's learnset updated to generation 7 (USUM)
+
 	db 1, BITE
 	db 1, LEER
 	db 5, SANDSTORM
@@ -3640,11 +3229,9 @@ LarvitarEvosAttacks:
 	db 41, CRUNCH
 	db 46, EARTHQUAKE
 	db 55, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-PupitarEvosAttacks:
-	db EVOLVE_LEVEL, 55, TYRANITAR
-	db 0 ; no more evolutions
+- PUPITAR's learnset updated to generation 7 (USUM)
+
 	db 1, BITE
 	db 1, LEER
 	db 1, SANDSTORM
@@ -3657,10 +3244,9 @@ PupitarEvosAttacks:
 	db 47, CRUNCH
 	db 54, EARTHQUAKE
 	db 67, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-TyranitarEvosAttacks:
-	db 0 ; no more evolutions
+- TYRANITAR's learnset updated to generation 7 (USUM)
+
 	db 1, BITE
 	db 1, LEER
 	db 1, SANDSTORM
@@ -3673,10 +3259,9 @@ TyranitarEvosAttacks:
 	db 47, CRUNCH
 	db 54, EARTHQUAKE
 	db 73, HYPER_BEAM
-	db 0 ; no more level-up moves
 
-LugiaEvosAttacks:
-	db 0 ; no more evolutions
+- LUGIA's learnset updated to generation 7 (USUM)
+
 	db 1, WHIRLWIND
 	db 9, GUST
 	db 29, RAIN_DANCE
@@ -3687,10 +3272,9 @@ LugiaEvosAttacks:
 	db 71, RECOVER
 	db 79, FUTURE_SIGHT
 	db 99, SKY_ATTACK
-	db 0 ; no more level-up moves
 
-HoOhEvosAttacks:
-	db 0 ; no more evolutions
+- HOOH's learnset updated to generation 7 (USUM)
+
 	db 1, WHIRLWIND
 	db 9, GUST
 	db 29, SUNNY_DAY
@@ -3701,10 +3285,9 @@ HoOhEvosAttacks:
 	db 71, RECOVER
 	db 79, FUTURE_SIGHT
 	db 99, SKY_ATTACK
-	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
-	db 0 ; no more evolutions
+- CELEBI's learnset updated to generation 7 (USUM)
+
 	db 1, LEECH_SEED
 	db 1, CONFUSION
 	db 1, RECOVER
@@ -3714,4 +3297,44 @@ CelebiEvosAttacks:
 	db 37, BATON_PASS
 	db 64, FUTURE_SIGHT
 	db 91, PERISH_SONG
-	db 0 ; no more level-up moves
+
+- VENUSAUR learns PETAL_DANCE when evolved
+- CHARIZARD learns WING_ATTACK when evolved
+- METAPOD learns HARDEN when evolved
+- BUTTERFREE learns GUST when evolved
+- KAKUNA learns HARDEN when evolved
+- BEEDRILL learns TWINEEDLE when evolved
+- RATICATE learns SCARY_FACE when evolved
+- ARBOK learns CRUNCH when evolved
+- VENOMOTH learns GUST when evolved
+- PERSIAN learns SWIFT when evolved
+- PRIMEAPE learns RAGE when evolved
+- POLIWRATH learns SUBMISSION when evolved
+- KADABRA learns KINESIS when evolved
+- ALAKAZAM learns KINESIS when evolved
+- MACHAMP learns STRENGTH when evolved
+- RAPIDASH learns FURY_ATTACK when evolved
+- SLOWBRO learns WITHDRAW when evolved
+- MAGNETON learns TRI_ATTACK when evolved
+- DODRIO learns TRI_ATTACK when evolved
+- EXEGGUTOR learns STOMP when evolved
+- HITMONLEE learns DOUBLE_KICK when evolved
+- HITMONCHAN learns COMET_PUNCH when evolved
+- GYARADOS learns BITE when evolved
+- VAPOREON learns WATER_GUN when evolved
+- JOLTEON learns THUNDERSHOCK when evolved
+- FLAREON learns EMBER when evolved
+- OMASTAR learns SPIKE_CANNON when evolved
+- KABUTOPS learns SLASH when evolved
+- DRAGONITE learns WING_ATTACK when evolved
+- MEGANIUM learns PETAL_DANCE when evolved
+- FURRET learns AGILITY when evolved
+- ARIADOS learns SWORDS_DANCE when evolved
+- AMPHAROS learns THUNDERPUNCH when evolved
+- SUDOWOODO learns SLAM when evolved
+- ESPEON learns CONFUSION when evolved
+- UMBREON learns PURSUIT when evolved
+- PILOSWINE learns FURY_ATTACK when evolved
+- OCTILLERY learns OCTAZOOKA when evolved
+- DONPHAN learns FURY_ATTACK when evolved
+- HITMONTOP learns ROLLING_KICK when evolved
