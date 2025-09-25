@@ -3352,6 +3352,7 @@ This document lists every individual change to anything in the game
 - Fixed COUNTER and MIRROR_COAT still working if the opponent used an item
 - Fixed a Disabled but PP Up–enhanced move not triggering STRUGGLE
 - Fixed Pokémon that fainted from PURSUIT having its old status condition when revived
+- Fixed LOCK_ON and MIND_READER not always bypassing FLY and DIG
 
 
 
