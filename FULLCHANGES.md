@@ -3338,3 +3338,29 @@ This document lists every individual change to anything in the game
 - OCTILLERY learns OCTAZOOKA when evolved
 - DONPHAN learns FURY_ATTACK when evolved
 - HITMONTOP learns ROLLING_KICK when evolved
+
+**Bug fixes:**
+
+- Fixed PERISH_SONG and SPIKES leaving a Pokémon with 0 HP and not fainting
+- Fixed THICK_CLUB and LIGHT_BALL making (Special) Attack wrap around above 1024
+- Fixed METAL_POWDER increasing damage taken with boosted (Special) Defense
+- Fixed REFLECT and LIGHT_SCREEN making (Special) Defense wrap around above 1024
+- Fixed moves with a 100% secondary effect not triggering it in 1/256 uses
+- Fixed BELLY_DRUM sharply boosting Attack even with under 50% HP
+- Fixed confusion damage getting affected by type-boosting items and EXPLOSION/SELFDESTRUCT doubling
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
