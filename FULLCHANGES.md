@@ -3348,7 +3348,8 @@ This document lists every individual change to anything in the game
 - Fixed moves with a 100% secondary effect not triggering it in 1/256 uses
 - Fixed BELLY_DRUM sharply boosting Attack even with under 50% HP
 - Fixed confusion damage getting affected by type-boosting items and EXPLOSION/SELFDESTRUCT doubling
-- 
+- Fixed moves that lower Defense doing so after breaking a Substitute
+- Fixed COUNTER and MIRROR_COAT still working if the opponent used an item
 
 
 
