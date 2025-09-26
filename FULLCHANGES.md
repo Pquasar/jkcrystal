@@ -3376,13 +3376,29 @@ This document lists every individual change to anything in the game
 - Fixed "Smart" AI does not encourage Solar Beam, Flame Wheel, or Moonlight during Sunny Day
 - Fixed "Cautious" AI may fail to discourage residual moves
 - Fixed AI does not discourage Future Sight when it's already been used
-- Fixed AI makes a false assumption about `CheckTypeMatchup`
+- Fixed AI makes a false assumption about CheckTypeMatchup
 - Fixed AI use of Full Heal or Full Restore does not cure Nightmare status
 - Fixed I use of Full Heal does not cure confusion status
 - Fixed AI might use its base reward value as an item
 - Fixed Wild Pokémon can always Teleport regardless of level difference
-- Fixed`RIVAL2` has lower DVs than `RIVAL1`
-- Fixed`HELD_CATCH_CHANCE` has no effect
+- Fixed RIVAL2 has lower DVs than RIVAL1
+- Fixed HELD_CATCH_CHANCE has no effect
+
+**Battle logic changes:**
+
+- Added the Physical-special split
+- Made moves that were Special in generation 7 Special
+
+	...
+
+- Made moves that were Physical in generation 7 Physical
+
+	...
+
+**Move changes:**
+
+- Multi-strike moves hit ratio increased (2:3:4:5) 3:3:1:1 -> 7:7:3:3
+- Multi-strike moves can now activate King's Rock on any of its hits
 
 
 

@@ -14,11 +14,11 @@ ENDM
 Moves:
 ; entries correspond to move ids (see constants/move_constants.asm)
 	table_width MOVE_LENGTH, Moves
-	move POUND,        EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0
-	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, FIGHTING,      PHYSICAL, 100, 25,   0
-	move DOUBLESLAP,   EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 10,   0
-	move COMET_PUNCH,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  85, 15,   0
-	move MEGA_PUNCH,   EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL,  85, 20,   0
+	move POUND,        EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0 ; No changes
+	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, FIGHTING,      PHYSICAL, 100, 25,   0 ; No changes
+	move DOUBLESLAP,   EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 10,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
+	move COMET_PUNCH,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  85, 15,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
+	move MEGA_PUNCH,   EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL,  85, 20,   0 ; No changes
 	move PAY_DAY,      EFFECT_PAY_DAY,            40, NORMAL,        PHYSICAL, 100, 20,   0
 	move FIRE_PUNCH,   EFFECT_BURN_HIT,           75, FIRE,          PHYSICAL, 100, 15,  10
 	move ICE_PUNCH,    EFFECT_FREEZE_HIT,         75, ICE,           PHYSICAL, 100, 15,  10
@@ -44,7 +44,7 @@ Moves:
 	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,        STATUS,   100, 15,   0
 	move HEADBUTT,     EFFECT_FLINCH_HIT,         70, NORMAL,        PHYSICAL, 100, 15,  30
 	move HORN_ATTACK,  EFFECT_NORMAL_HIT,         65, NORMAL,        PHYSICAL, 100, 25,   0
-	move FURY_ATTACK,  EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 20,   0
+	move FURY_ATTACK,  EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 20,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
 	move HORN_DRILL,   EFFECT_OHKO,                1, NORMAL,        PHYSICAL,  30,  5,   0
 	move TACKLE,       EFFECT_NORMAL_HIT,         35, NORMAL,        PHYSICAL,  95, 35,   0
 	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,        PHYSICAL, 100, 15,  30
@@ -55,7 +55,7 @@ Moves:
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0
 	move POISON_STING, EFFECT_POISON_HIT,         15, POISON,        PHYSICAL, 100, 35,  30
 	move TWINEEDLE,    EFFECT_POISON_MULTI_HIT,   25, BUG,           PHYSICAL, 100, 20,  20
-	move PIN_MISSILE,  EFFECT_MULTI_HIT,          14, BUG,           PHYSICAL,  85, 20,   0
+	move PIN_MISSILE,  EFFECT_MULTI_HIT,          14, BUG,           PHYSICAL,  85, 20,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
 	move LEER,         EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0
 	move BITE,         EFFECT_FLINCH_HIT,         60, DARK,          PHYSICAL, 100, 25,  30
 	move GROWL,        EFFECT_ATTACK_DOWN,         0, NORMAL,        STATUS,   100, 40,   0
@@ -144,7 +144,7 @@ Moves:
 	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         PHYSICAL,  75, 10,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,        SPECIAL,  100, 20,   0
 	move SKULL_BASH,   EFFECT_SKULL_BASH,        100, NORMAL,        PHYSICAL, 100, 15,   0
-	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, NORMAL,        PHYSICAL, 100, 15,   0
+	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, NORMAL,        PHYSICAL, 100, 15,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
 	move CONSTRICT,    EFFECT_SPEED_DOWN_HIT,     10, NORMAL,        PHYSICAL, 100, 35,  10
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC_TYPE,  STATUS,   100, 20,   0
 	move KINESIS,      EFFECT_ACCURACY_DOWN,       0, PSYCHIC_TYPE,  STATUS,    80, 15,   0
@@ -153,7 +153,7 @@ Moves:
 	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,        STATUS,    75, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC_TYPE,  SPECIAL,  100, 15,   0
 	move POISON_GAS,   EFFECT_POISON,              0, POISON,        STATUS,    55, 40,   0
-	move BARRAGE,      EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 20,   0
+	move BARRAGE,      EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 20,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          20, BUG,           PHYSICAL, 100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,        STATUS,    75, 10,   0
 	move SKY_ATTACK,   EFFECT_SKY_ATTACK,        140, FLYING,        PHYSICAL,  90,  5,   0
@@ -167,7 +167,7 @@ Moves:
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,        STATUS,   100, 40,   0
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,         90, WATER,         PHYSICAL,  85, 10,   0
 	move EXPLOSION,    EFFECT_SELFDESTRUCT,      250, NORMAL,        PHYSICAL, 100,  5,   0
-	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  80, 15,   0
+	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  80, 15,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
 	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,        PHYSICAL,  90, 10,   0
 	move REST,         EFFECT_HEAL,                0, PSYCHIC_TYPE,  STATUS,   100, 10,   0
 	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         75, ROCK,          PHYSICAL,  90, 10,  30
@@ -211,7 +211,7 @@ Moves:
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,        STATUS,   100,  5,   0
 	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     55, ICE,           SPECIAL,   95, 15, 100
 	move DETECT,       EFFECT_PROTECT,             0, FIGHTING,      STATUS,   100,  5,   0
-	move BONE_RUSH,    EFFECT_MULTI_HIT,          25, GROUND,        PHYSICAL,  80, 10,   0
+	move BONE_RUSH,    EFFECT_MULTI_HIT,          25, GROUND,        PHYSICAL,  80, 10,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,            90, DRAGON,        PHYSICAL, 100, 15,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,          STATUS,   100, 10,   0

@@ -857,9 +857,9 @@ MultiHit:
 	supereffectivelooptext
 	checkfaint
 	buildopponentrage
+	kingsrock
 	endloop
 	raisesub
-	kingsrock
 	endmove
 
 PoisonMultiHit:

@@ -5300,14 +5300,21 @@ BattleCommand_EndLoop:
 	ret
 
 .not_triple_kick
+; NEED TO: Check if bc really needs to be preserved
+	push bc
 	call BattleRandom
-	and $3
-	cp 2
-	jr c, .got_number_hits
-	call BattleRandom
-	and $3
+	ld b, 3
+	cp $B3
+; $B3 = 179
+	jr nc, .got_number_hits
+; 77/256 chance to be 3-4 hits (~30%)
+	ld b, 1
 .got_number_hits
-	inc a
+	call BattleRandom
+	and 1
+; Load a as 0 or 1, then add b to get hits
+	add b
+	pop bc
 .double_hit
 	ld [de], a
 	inc a
