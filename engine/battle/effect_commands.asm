@@ -5884,10 +5884,10 @@ BattleCommand_Paralyze:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	bit PAR, a
-	jr nz, .paralyzed
+	jp nz, .paralyzed
 	ld a, [wTypeModifier]
 	and EFFECTIVENESS_MASK
-	jr z, .didnt_affect
+	jp z, .didnt_affect
 	ld b, ELECTRIC ; Don't paralyze an electric-type
 	call CheckIfTargetIsGivenType
 	jr z, .didnt_affect
