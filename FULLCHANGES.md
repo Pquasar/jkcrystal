@@ -3353,7 +3353,10 @@ This document lists every individual change to anything in the game
 - Fixed a Disabled but PP Up–enhanced move not triggering STRUGGLE
 - Fixed Pokémon that fainted from PURSUIT having its old status condition when revived
 - Fixed LOCK_ON and MIND_READER not always bypassing FLY and DIG
-
+- Fixed BEAT_UP desynchronizing link battles
+- Fixed BEAT_UP working incorrectly with only one Pokémon in the party
+- Fixed BEAT_UP triggering KINGS_ROCK even if it failed
+- Fixed PRESENT damage being incorrect in link battles
 
 
 
