@@ -3399,6 +3399,7 @@ This document lists every individual change to anything in the game
 
 - Multi-strike moves hit ratio increased (2:3:4:5) 3:3:1:1 -> 7:7:3:3
 - Multi-strike moves can now activate King's Rock on any of its hits
+- Fire-type damaging moves thaw a frozen target
 
 
 

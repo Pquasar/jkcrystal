@@ -91,6 +91,7 @@ BurnHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	defrosttarget
 	burntarget
 	endmove
 
@@ -1228,6 +1229,7 @@ TrapTarget:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	defrosttarget
 	traptarget
 	endmove
 
@@ -1479,6 +1481,7 @@ FlameWheel:
 	defrost
 	checkfaint
 	buildopponentrage
+	defrosttarget
 	burntarget
 	endmove
 
@@ -1690,6 +1693,7 @@ SacredFire:
 	defrost
 	checkfaint
 	buildopponentrage
+	defrosttarget
 	burntarget
 	endmove
 

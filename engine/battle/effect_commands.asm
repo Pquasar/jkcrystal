@@ -6583,6 +6583,19 @@ INCLUDE "engine/battle/move_effects/future_sight.asm"
 
 INCLUDE "engine/battle/move_effects/thunder.asm"
 
+BattleCommand_DefrostTarget:
+; defrosttarget
+
+; Thaw target if it's a fire-type move
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp FIRE
+	ret nz
+
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	jp Defrost
+
 CheckHiddenOpponent:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
