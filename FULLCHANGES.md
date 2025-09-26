@@ -3357,10 +3357,32 @@ This document lists every individual change to anything in the game
 - Fixed BEAT_UP working incorrectly with only one Pokémon in the party
 - Fixed BEAT_UP triggering KINGS_ROCK even if it failed
 - Fixed PRESENT damage being incorrect in link battles
-
-
-
-
+- Fixed Return and Frustration deal no damage when the user's happiness is low or high, respectively
+- Fixed Dragon Scale, not Dragon Fang, boosts Dragon-type moves
+- Fixed Switching out or switching against a Pokémon with max HP below 4 freezes the game
+- Fixed Moves that do damage and increase your stats do not increase stats after a KO
+- Fixed A Transformed Pokémon can use Sketch and learn otherwise unobtainable moves
+- Fixed Catching a Transformed Pokémon always catches a Ditto
+- Fixed Experience underflow for level 1 Pokémon with Medium-Slow growth rate
+- Fixed The Dude's catching tutorial may crash if his Poké Ball can't be used
+- Fixed BRN/PSN/PAR do not affect catch rate
+- Fixed Moon Ball does not boost catch rate
+- Fixed Love Ball boosts catch rate for the wrong gender
+- Fixed Fast Ball only boosts catch rate for three Pokémon
+- Fixed Heavy Ball uses wrong weight value for three Pokémon
+- Fixed PRZ and BRN stat reductions don't apply to switched Pokémon
+- Fixed "Smart" AI encourages Mean Look if its own Pokémon is badly poisoned
+- Fixed "Smart" AI discourages Conversion2 after the first turn
+- Fixed "Smart" AI does not encourage Solar Beam, Flame Wheel, or Moonlight during Sunny Day
+- Fixed "Cautious" AI may fail to discourage residual moves
+- Fixed AI does not discourage Future Sight when it's already been used
+- Fixed AI makes a false assumption about `CheckTypeMatchup`
+- Fixed AI use of Full Heal or Full Restore does not cure Nightmare status
+- Fixed I use of Full Heal does not cure confusion status
+- Fixed AI might use its base reward value as an item
+- Fixed Wild Pokémon can always Teleport regardless of level difference
+- Fixed`RIVAL2` has lower DVs than `RIVAL1`
+- Fixed`HELD_CATCH_CHANCE` has no effect
 
 
 
