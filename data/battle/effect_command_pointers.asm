@@ -156,7 +156,7 @@ BattleCommandPointers:
 	dw BattleCommand_BellyDrum
 	dw BattleCommand_PsychUp
 	dw BattleCommand_Rage
-	dw BattleCommand_DoubleFlyingDamage
+	dw BattleCommand_DoubleFlyingPower
 	dw BattleCommand_DoubleUndergroundDamage
 	dw BattleCommand_MirrorCoat
 	dw BattleCommand_CheckFutureSight

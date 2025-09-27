@@ -156,7 +156,7 @@ ENDM
 	command bellydrum               ; 95
 	command psychup                 ; 96
 	command rage                    ; 97
-	command doubleflyingdamage      ; 98
+	command doubleflyingpower       ; 98
 	command doubleundergrounddamage ; 99
 	command mirrorcoat              ; 9a
 	command checkfuturesight        ; 9b

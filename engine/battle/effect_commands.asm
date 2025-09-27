@@ -5979,12 +5979,12 @@ EndRechargeOpp:
 
 INCLUDE "engine/battle/move_effects/rage.asm"
 
-BattleCommand_DoubleFlyingDamage:
+BattleCommand_DoubleFlyingPower:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	bit SUBSTATUS_FLYING, a
 	ret z
-	jr DoubleDamage
+	jr DoublePower
 
 BattleCommand_DoubleUndergroundDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
@@ -6006,6 +6006,15 @@ DoubleDamage:
 	ld [hl], a
 .quit
 	ret
+
+DoublePower:
+	ld a, d
+	add d
+    jr nc, .ok   
+    ld a, $ff    
+.ok
+    ld d, a
+    ret
 
 INCLUDE "engine/battle/move_effects/mimic.asm"
 

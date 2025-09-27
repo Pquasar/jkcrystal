@@ -1891,10 +1891,10 @@ Twister:
 	doturn
 	critical
 	damagestats
+	doubleflyingpower
 	damagecalc
 	stab
 	damagevariation
-	doubleflyingdamage
 	checkhit
 	effectchance
 	moveanim
@@ -1951,10 +1951,10 @@ Gust:
 	doturn
 	critical
 	damagestats
+	doubleflyingpower
 	damagecalc
 	stab
 	damagevariation
-	doubleflyingdamage
 	checkhit
 	moveanim
 	failuretext
