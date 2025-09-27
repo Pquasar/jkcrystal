@@ -846,13 +846,13 @@ CompareMovePriority:
 	ret
 
 GetMovePriority:
-; Return the priority (0-3) of move a.
+; Return the priority (0-6) of move a.
 
 	ld b, a
 
-	; Vital Throw goes last.
+	; Vital Throw is -1
 	cp VITAL_THROW
-	ld a, 0
+	ld a, 2
 	ret z
 
 	call GetMoveEffect

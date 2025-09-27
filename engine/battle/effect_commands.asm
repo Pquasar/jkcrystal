@@ -6010,11 +6010,11 @@ DoubleDamage:
 DoublePower:
 	ld a, d
 	add d
-    jr nc, .ok   
-    ld a, $ff    
+	jr nc, .ok
+	ld a, $FF
 .ok
-    ld d, a
-    ret
+	ld d, a
+	ret
 
 INCLUDE "engine/battle/move_effects/mimic.asm"
 

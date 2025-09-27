@@ -30,9 +30,9 @@ Moves:
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 20,   0 ; PP 30 -> 20
 	move CUT,          EFFECT_NORMAL_HIT,         50, NORMAL,        PHYSICAL,  95, 30,   0 ; No changes
 	move GUST,         EFFECT_GUST,               40, FLYING,        SPECIAL,  100, 35,   0 ; Power is doubled instead of damage if used against a flying opponent
-	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,        PHYSICAL, 100, 35,   0
-	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,   100, 20,   0
-	move FLY,          EFFECT_FLY,                70, FLYING,        PHYSICAL,  95, 15,   0
+	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,        PHYSICAL, 100, 35,   0 ; No changes
+	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,   100, 20,   0 ; Priority -1 -> -3, NEED TO: only fail based on level difference, cannot force a flying or digging mon to switch, can force a protected mon to switch, cannot miss
+	move FLY,          EFFECT_FLY,                90, FLYING,        PHYSICAL,  95, 15,   0 ; Power 70 -> 90
 	move BIND,         EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  75, 20,   0
 	move SLAM,         EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL,  75, 20,   0
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         35, GRASS,         PHYSICAL, 100, 10,   0
