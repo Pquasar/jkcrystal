@@ -1568,6 +1568,9 @@ BattleCommand_CheckHit:
 	call .XAccuracy
 	ret nz
 
+	call .AntiMinimize
+	ret z
+
 	; Perfect-accuracy moves
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -1756,6 +1759,22 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVar
 	bit SUBSTATUS_X_ACCURACY, a
+	ret
+
+.AntiMinimize:
+; Returns z if Stomp or Body Slam is used against a minimized target
+	ld hl, wEnemyMinimized
+	ld a, [hl]
+	and a
+	jr z, .no_minimize
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BODY_SLAM
+	ret z
+	cp EFFECT_STOMP
+	ret z
+.no_minimize
+	or 1
 	ret
 
 .StatModifiers:
