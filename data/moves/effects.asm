@@ -1229,6 +1229,7 @@ TrapTarget:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	kingsrock
 	defrosttarget
 	traptarget
 	endmove
@@ -2077,4 +2078,26 @@ DefenseCurl:
 	raisesub
 	statupmessage
 	statupfailtext
+	endmove
+
+BodySlam:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	doubleminimizedamage
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	paralyzetarget
 	endmove

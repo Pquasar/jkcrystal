@@ -33,25 +33,25 @@ Moves:
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,        PHYSICAL, 100, 35,   0 ; No changes
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,   100, 20,   0 ; Priority -1 -> -3, NEED TO: only fail based on level difference, cannot force a flying or digging mon to switch, can force a protected mon to switch, cannot miss
 	move FLY,          EFFECT_FLY,                90, FLYING,        PHYSICAL,  95, 15,   0 ; Power 70 -> 90
-	move BIND,         EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  85, 20,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Accuracy 75% -> 85% | Turns trapped 2-5 -> 4-5
+	move BIND,         EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  85, 20,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Accuracy 75% -> 85% | Turns trapped 2-5 -> 4-5 | Trapping moves are affected by King's Rock
 	move SLAM,         EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL,  75, 20,   0 ; No changes
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,         PHYSICAL, 100, 25,   0 ; Power 35 -> 45 | pp 10 -> 25
 	move STOMP,        EFFECT_STOMP,              65, NORMAL,        PHYSICAL, 100, 20,  30 ; Stomp never misses against a minimized target
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING,      PHYSICAL, 100, 30,   0 ; Each hit can now activate King's Rock | NEED TO: check if substitute falling ends the move early
 	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, NORMAL,        PHYSICAL,  75,  5,   0 ; No changes
-	move JUMP_KICK,    EFFECT_JUMP_KICK,         100, FIGHTING,      PHYSICAL,  95, 10,   0 ; Crash damage is 1/2 max hp, not 1/8th of the damage | Power 70 -> 100 | pp 25 -> 10
-	move ROLLING_KICK, EFFECT_FLINCH_HIT,         60, FIGHTING,      PHYSICAL,  85, 15,  30
-	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,        STATUS,   100, 15,   0
-	move HEADBUTT,     EFFECT_FLINCH_HIT,         70, NORMAL,        PHYSICAL, 100, 15,  30
-	move HORN_ATTACK,  EFFECT_NORMAL_HIT,         65, NORMAL,        PHYSICAL, 100, 25,   0
+	move JUMP_KICK,    EFFECT_JUMP_KICK,         100, FIGHTING,      PHYSICAL,  95, 10,   0 ; Crash damage is 1/2 max hp, not 1/8th of the damage | Power 70 -> 100 | pp 25 -> 10 | NEED TO: update end turn effects if the user fained from crash damage
+	move ROLLING_KICK, EFFECT_FLINCH_HIT,         60, FIGHTING,      PHYSICAL,  85, 15,  30 ; No changes
+	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,        STATUS,   100, 15,   0 ; No changes
+	move HEADBUTT,     EFFECT_FLINCH_HIT,         70, NORMAL,        PHYSICAL, 100, 15,  30 ; No changes
+	move HORN_ATTACK,  EFFECT_NORMAL_HIT,         65, NORMAL,        PHYSICAL, 100, 25,   0 ; No changes
 	move FURY_ATTACK,  EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 20,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
-	move HORN_DRILL,   EFFECT_OHKO,                1, NORMAL,        PHYSICAL,  30,  5,   0
-	move TACKLE,       EFFECT_NORMAL_HIT,         35, NORMAL,        PHYSICAL,  95, 35,   0
-	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,        PHYSICAL, 100, 15,  30
-	move WRAP,         EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  85, 20,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5
-	move TAKE_DOWN,    EFFECT_RECOIL_HIT,         90, NORMAL,        PHYSICAL,  85, 20,   0
-	move THRASH,       EFFECT_RAMPAGE,            90, NORMAL,        PHYSICAL, 100, 20,   0
-	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,        PHYSICAL, 100, 15,   0
+	move HORN_DRILL,   EFFECT_OHKO,                1, NORMAL,        PHYSICAL,  30,  5,   0 ; NEED TO: OHKO moves are not affected by accuracy changes, +1% accuracy for every level
+	move TACKLE,       EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0 ; Power 35 -> 45 | Accuracy 95% -> 100%
+	move BODY_SLAM,    EFFECT_BODY_SLAM,          85, NORMAL,        PHYSICAL, 100, 15,  30 ; Body slam does double damage to minimize | Body Slam never misses against a minimized target
+	move WRAP,         EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  90, 20,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5 | Trapping moves are affected by King's Rock | Accuracy 85% -> 90%
+	move TAKE_DOWN,    EFFECT_RECOIL_HIT,         90, NORMAL,        PHYSICAL,  85, 20,   0 ; No changes
+	move THRASH,       EFFECT_RAMPAGE,           120, NORMAL,        PHYSICAL, 100, 10,   0 ; Power 90 -> 120 | pp 20 -> 10 | NEED TO: update factors that disrupt rampage
+	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,        PHYSICAL, 100, 15,   0 ; 
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0
 	move POISON_STING, EFFECT_POISON_HIT,         15, POISON,        PHYSICAL, 100, 35,  30
 	move TWINEEDLE,    EFFECT_POISON_MULTI_HIT,   25, BUG,           PHYSICAL, 100, 20,  20
@@ -96,7 +96,7 @@ Moves:
 	move PETAL_DANCE,  EFFECT_RAMPAGE,            70, GRASS,         SPECIAL,  100, 20,   0
 	move STRING_SHOT,  EFFECT_SPEED_DOWN,          0, BUG,           STATUS,    95, 40,   0
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      40, DRAGON,        SPECIAL,  100, 10,   0
-	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        15, FIRE,          SPECIAL,   70, 15,   0 ; Fire-type damaging moves thaw the target | Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5
+	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        15, FIRE,          SPECIAL,   70, 15,   0 ; Fire-type damaging moves thaw the target | Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5 | Trapping moves are affected by King's Rock
 	move THUNDERSHOCK, EFFECT_PARALYZE_HIT,       40, ELECTRIC,      SPECIAL,  100, 30,  10 ; Electric-type targets can't be paralyzed
 	move THUNDERBOLT,  EFFECT_PARALYZE_HIT,       95, ELECTRIC,      SPECIAL,  100, 15,  10 ; Electric-type targets can't be paralyzed
 	move THUNDER_WAVE, EFFECT_PARALYZE,            0, ELECTRIC,      STATUS,   100, 20,   0 ; Electric-type targets can't be paralyzed
@@ -141,7 +141,7 @@ Moves:
 	move BONE_CLUB,    EFFECT_FLINCH_HIT,         65, GROUND,        PHYSICAL,  85, 20,  10
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,          SPECIAL,   85,  5,  10 ; Fire-type damaging moves thaw the target
 	move WATERFALL,    EFFECT_NORMAL_HIT,         80, WATER,         PHYSICAL, 100, 15,   0
-	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         PHYSICAL,  75, 10,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5
+	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         PHYSICAL,  75, 10,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5 | Trapping moves are affected by King's Rock
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,        SPECIAL,  100, 20,   0
 	move SKULL_BASH,   EFFECT_SKULL_BASH,        100, NORMAL,        PHYSICAL, 100, 15,   0
 	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, NORMAL,        PHYSICAL, 100, 15,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock
@@ -263,6 +263,6 @@ Moves:
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,         SPECIAL,  100, 15,  20
 	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,       80, PSYCHIC_TYPE,  SPECIAL,   90, 15,   0
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,      PHYSICAL, 100, 15,  50
-	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5
+	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5 | Trapping moves are affected by King's Rock
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0
 	assert_table_length NUM_ATTACKS
