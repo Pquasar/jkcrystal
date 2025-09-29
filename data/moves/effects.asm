@@ -1104,6 +1104,7 @@ HyperBeam:
 	rechargenextturn
 	checkfaint
 	buildopponentrage
+	kingsrock
 	endmove
 
 Rage:
@@ -2101,4 +2102,24 @@ BodySlam:
 	checkfaint
 	buildopponentrage
 	paralyzetarget
+	endmove
+
+LowKick:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	weightdamage
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove

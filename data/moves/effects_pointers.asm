@@ -159,4 +159,5 @@ MoveEffectsPointers:
 	dw Fly
 	dw DefenseCurl
 	dw BodySlam
+	dw LowKick
 	assert_table_length NUM_MOVE_EFFECTS
