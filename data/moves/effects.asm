@@ -2109,7 +2109,7 @@ LowKick:
 	usedmovetext
 	doturn
 	critical
-	weightdamage
+	lowkick
 	damagecalc
 	stab
 	damagevariation
