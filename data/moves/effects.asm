@@ -2123,3 +2123,10 @@ LowKick:
 	buildopponentrage
 	kingsrock
 	endmove
+
+Growth:
+	checkobedience
+	usedmovetext
+	doturn
+	growth
+	endmove

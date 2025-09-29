@@ -81,13 +81,13 @@ Moves:
 	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,        PHYSICAL, 100, 20,   0 ; No changes
 	move SUBMISSION,   EFFECT_RECOIL_HIT,         80, FIGHTING,      PHYSICAL,  80, 20,   0 ; PP 25 -> 20
 	move LOW_KICK,     EFFECT_LOW_KICK,            1, FIGHTING,      PHYSICAL,  90, 20,  30 ; Power 50 -> varies by weight
-	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING,      PHYSICAL, 100, 20,   0
-	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, FIGHTING,      PHYSICAL, 100, 20,   0
-	move STRENGTH,     EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL, 100, 15,   0
-	move ABSORB,       EFFECT_LEECH_HIT,          20, GRASS,         SPECIAL,  100, 20,   0
-	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          40, GRASS,         SPECIAL,  100, 10,   0
-	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,         STATUS,    90, 10,   0
-	move GROWTH,       EFFECT_SP_ATK_UP,           0, NORMAL,        STATUS,   100, 40,   0
+	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING,      PHYSICAL, 100, 20,   0 ; Priority -1 -> -2 | NEED TO: Counter cannot be copied by mirror move | Fix missed OHKO moves being countered | Counter becomes a 1 power physical move if the opponent did 0 damage
+	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, FIGHTING,      PHYSICAL, 100, 20,   0 ; No changes
+	move STRENGTH,     EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL, 100, 15,   0 ; No changes
+	move ABSORB,       EFFECT_LEECH_HIT,          20, GRASS,         SPECIAL,  100, 25,   0 ; PP 20 -> 25 | NEED TO: Absorb moves can work on a substitute
+	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          40, GRASS,         SPECIAL,  100, 15,   0 ; PP 10 -> 15 | NEED TO: Absorb moves can work on a substitute
+	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,         STATUS,    90, 10,   0 ; NEED TO: Leech seed happens after the end of turns
+	move GROWTH,       EFFECT_GROWTH,              0, NORMAL,        STATUS,   100, 20,   0 ; Effect Sp.Atk up -> Growth effect
 	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,         PHYSICAL,  95, 25,   0
 	move SOLARBEAM,    EFFECT_SOLARBEAM,         120, GRASS,         SPECIAL,  100, 10,   0
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,        STATUS,    75, 35,   0

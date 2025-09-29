@@ -182,6 +182,7 @@ ENDM
 	command curl                    ; af
 	command defrosttarget           ; b0
 	command lowkick                 ; b1
+	command growth                  ; b2
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

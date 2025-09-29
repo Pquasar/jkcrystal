@@ -3355,28 +3355,7 @@ INCLUDE "engine/battle/move_effects/lock_on.asm"
 INCLUDE "engine/battle/move_effects/sketch.asm"
 
 BattleCommand_DefrostOpponent:
-; Thaw the opponent if frozen, and
-; raise the user's Attack one stage.
-
-	call AnimateCurrentMove
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	call Defrost
-
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVarAddr
-	ld a, [hl]
-	push hl
-	push af
-
-	ld a, EFFECT_ATTACK_UP
-	ld [hl], a
-	call BattleCommand_StatUp
-
-	pop af
-	pop hl
-	ld [hl], a
+; Unused
 	ret
 
 INCLUDE "engine/battle/move_effects/sleep_talk.asm"
@@ -5405,24 +5384,7 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
+; Unused
 	ret
 
 BattleCommand_FlinchTarget:
@@ -5533,9 +5495,7 @@ BattleCommand_OHKO:
 	ret
 
 BattleCommand_LowKick:
-; weightdamage
-
-	; Get the opponent's species
+; Get the opponent's species
 	ld a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
@@ -5543,13 +5503,13 @@ BattleCommand_LowKick:
 	ld a, [wEnemyMonSpecies]
 .go
 
-	; Get the dex entry
+; Get the dex entry
 	ld b, a
 	farcall GetDexEntryPointer  ; b:de
 	ld l, e
 	ld h, d
 
-	; Find and retrieve the weight
+; Find and retrieve the weight
 .skip_name
 	ld a, b
 	call GetFarByte
@@ -5563,7 +5523,7 @@ BattleCommand_LowKick:
 	ld c, l
 	ld b, h
 
-	; Get the resulting power from the table
+; Get the resulting power from the table
 	ld hl, .table
 .table_loop
 	ld e, [hl]
@@ -5571,7 +5531,7 @@ BattleCommand_LowKick:
 	ld d, [hl]
 	inc hl
 
-	; if (de >= bc) jr .table_loop_end;
+; if (de >= bc) jr .table_loop_end;
 	ld a, b
 	cp d
 	jr c, .table_loop_next
@@ -5584,13 +5544,13 @@ BattleCommand_LowKick:
 	jr .table_loop
 .table_loop_end
 
-	; Overwrite the current move power
+; Overwrite the current move power
 	ld b, [hl]
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVarAddr
 	ld [hl], b
 
-	; Do the rest
+; Do the rest
 	jp BattleCommand_DamageStats
 
 ; The output with these specific values is correct,
@@ -6481,6 +6441,32 @@ BattleCommand_Defrost:
 	jp StdBattleTextbox
 
 INCLUDE "engine/battle/move_effects/curse.asm"
+
+BattleCommand_Growth:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .sun_growth
+
+; Special Attack
+	call ResetMiss
+	call BattleCommand_SpecialAttackUp
+	call BattleCommand_StatUpMessage
+
+; Attack
+	call ResetMiss
+	call BattleCommand_AttackUp
+	jp BattleCommand_StatUpMessage
+
+.sun_growth
+; Special Attack
+	call ResetMiss
+	call BattleCommand_SpecialAttackUp2
+	call BattleCommand_StatUpMessage
+
+; Attack
+	call ResetMiss
+	call BattleCommand_AttackUp2
+	jp BattleCommand_StatUpMessage
 
 INCLUDE "engine/battle/move_effects/protect.asm"
 
