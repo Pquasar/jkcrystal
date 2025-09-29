@@ -37,6 +37,7 @@ are updated, so abilities won't be added)
 - All TMs have been updated to generation 7 moves
 - Update names of items and moves to generation 7
 - All Pokémon catch rates and base XP updated to generation 7
+- In game text is accurate on weather a move missed, failed or didn't affect the target
 
 ## Far-off Changes
 
@@ -49,6 +50,8 @@ are updated, so abilities won't be added)
 - Optimize all files
 - Simplify some events
 - Add variable NPC dialogue
+- Egg moves can come from both the mother and father
+- Gender formula updated to generation 7
 
 ## On the Fence
 
@@ -56,3 +59,4 @@ are updated, so abilities won't be added)
 - Remove some baby and legendary Pokémon to include generation 4 evolutions
 - Add the Fairy-type
 - Add 3 Fairy-type moves
+- TMs and Tutor moves aren't inherited from bred Pokémon

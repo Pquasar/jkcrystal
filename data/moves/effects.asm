@@ -885,10 +885,10 @@ PoisonMultiHit:
 	supereffectivelooptext
 	checkfaint
 	buildopponentrage
-	endloop
-	raisesub
 	kingsrock
 	poisontarget
+	endloop
+	raisesub
 	endmove
 
 FlinchHit:
@@ -1964,6 +1964,7 @@ Gust:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	kingsrock
 	endmove
 
 Stomp:
