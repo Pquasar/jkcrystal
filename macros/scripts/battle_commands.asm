@@ -64,7 +64,7 @@ ENDM
 	command charge                  ; 39
 	command checkcharge             ; 3a
 	command traptarget              ; 3b
-	command effect0x3c              ; 3c
+	command checkpowder             ; 3c
 	command rampage                 ; 3d
 	command checkrampage            ; 3e
 	command constantdamage          ; 3f
@@ -166,23 +166,22 @@ ENDM
 	command thunderaccuracy         ; 9f
 	command teleport                ; a0
 	command beatup                  ; a1
-	command ragedamage              ; a2
-	command resettypematchup        ; a3
-	command allstatsup              ; a4
-	command bidefailtext            ; a5
-	command raisesubnoanim          ; a6
-	command lowersubnoanim          ; a7
-	command beatupfailtext          ; a8
-	command clearmissdamage         ; a9
-	command movedelay               ; aa
-	command moveanim                ; ab
-	command tristatuschance         ; ac
-	command supereffectivelooptext  ; ad
-	command startloop               ; ae
-	command curl                    ; af
-	command defrosttarget           ; b0
-	command lowkick                 ; b1
-	command growth                  ; b2
+	command resettypematchup        ; a2
+	command allstatsup              ; a3
+	command bidefailtext            ; a4
+	command raisesubnoanim          ; a5
+	command lowersubnoanim          ; a6
+	command beatupfailtext          ; a7
+	command clearmissdamage         ; a8
+	command movedelay               ; a9
+	command moveanim                ; aa
+	command tristatuschance         ; ab
+	command supereffectivelooptext  ; ac
+	command startloop               ; ad
+	command curl                    ; ae
+	command defrosttarget           ; af
+	command lowkick                 ; b0
+	command growth                  ; b1
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

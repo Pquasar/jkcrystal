@@ -1565,6 +1565,9 @@ BattleCommand_CheckHit:
 	call .ThunderRain
 	ret z
 
+	call .PoisonToxic
+	ret z
+
 	call .XAccuracy
 	ret nz
 
@@ -1746,6 +1749,19 @@ BattleCommand_CheckHit:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
+	ret
+
+.PoisonToxic:
+; Return z if the current move is toxic and the user is a poison type
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_TOXIC
+	ret nz
+	push bc 
+
+	ld b, POISON
+	call CheckIfTargetIsGivenType
+	pop bc
 	ret
 
 .XAccuracy:
@@ -2457,46 +2473,35 @@ BattleCommand_BuildOpponentRage:
 	bit SUBSTATUS_RAGE, a
 	ret z
 
-	ld de, wEnemyRageCounter
+	ld hl, wEnemyAtkLevel
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .player
-	ld de, wPlayerRageCounter
-.player
-	ld a, [de]
-	inc a
-	ret z
-	ld [de], a
+	jr z, .build_rage
+	ld hl, wPlayerAtkLevel
 
+.build_rage
+	ld a, [hl]
+	cp MAX_STAT_LEVEL
+	ret nc
+
+; Temporarily overwrite the value of wEffectFailed so that it doesn't
+; interfere when the Attack stat is being raised.
+	ld a, [wEffectFailed]
+	push af
+	xor a
+	ld [wEffectFailed], a
+
+; Raise Attack of enraged opponent
 	call BattleCommand_SwitchTurn
+	call BattleCommand_AttackUp
 	ld hl, RageBuildingText
 	call StdBattleTextbox
-	jp BattleCommand_SwitchTurn
+	call BattleCommand_StatUpMessage
+	call BattleCommand_SwitchTurn
 
-BattleCommand_RageDamage:
-	ld a, [wCurDamage]
-	ld h, a
-	ld b, a
-	ld a, [wCurDamage + 1]
-	ld l, a
-	ld c, a
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wPlayerRageCounter]
-	jr z, .rage_loop
-	ld a, [wEnemyRageCounter]
-.rage_loop
-	and a
-	jr z, .done
-	dec a
-	add hl, bc
-	jr nc, .rage_loop
-	ld hl, $ffff
-.done
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
+; Restore original value of wEffectFailed
+	pop af
+	ld [wEffectFailed], a
 	ret
 
 EndMoveEffect:
@@ -5709,8 +5714,33 @@ BattleCommand_Charge:
 	text_far _BattleDugText
 	text_end
 
-BattleCommand_Unused3C:
-; effect0x3c
+BattleCommand_CheckPowder:
+; Checks if the move is powder/spore-based and 
+; if the opponent is Grass-type
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld hl, PowderMoves
+	call IsInByteArray
+	ret nc
+
+; If the opponent is Grass-type, the move fails.
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .CheckGrassType
+	ld hl, wBattleMonType1
+
+.CheckGrassType:
+	ld a, [hli]
+	cp GRASS
+	jr z, .Immune
+	ld a, [hl]
+	cp GRASS
+	ret nz
+	;fallthrough
+.Immune:
+	ld a, 1
+	ld [wAttackMissed], a
 	ret
 
 BattleCommand_TrapTarget:
