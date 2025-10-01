@@ -1166,7 +1166,8 @@ BattleCommand_Critical:
 	bit SUBSTATUS_FOCUS_ENERGY, a
 	jr z, .CheckCritical
 
-; +1 critical level
+; +2 critical level
+	inc c
 	inc c
 
 .CheckCritical:
@@ -2945,20 +2946,6 @@ HitSelfInConfusion:
 
 BattleCommand_DamageCalc:
 ; Return a damage value for move power d, player level e, enemy defense c and player attack b.
-
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-
-; Selfdestruct and Explosion halve defense.
-	cp EFFECT_SELFDESTRUCT
-	jr nz, .dont_selfdestruct
-
-	srl c
-	jr nz, .dont_selfdestruct
-	inc c
-
-.dont_selfdestruct
-
 ; Variable-hit moves and Conversion can have a power of 0.
 	cp EFFECT_MULTI_HIT
 	jr z, .skip_zero_damage_check

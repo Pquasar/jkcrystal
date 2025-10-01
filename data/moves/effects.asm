@@ -1080,7 +1080,6 @@ SkyAttack:
 	checkfaint
 	buildopponentrage
 	flinchtarget
-	kingsrock
 	endmove
 
 Substitute:

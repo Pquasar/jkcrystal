@@ -14,4 +14,7 @@ MetronomeExcepts:
 	db DESTINY_BOND
 	db SLEEP_TALK
 	db THIEF
+	db MIRROR_MOVE
+	db SNORE
+	db TRANSFORM
 	db -1
