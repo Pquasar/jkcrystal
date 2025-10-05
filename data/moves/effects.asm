@@ -1258,8 +1258,10 @@ Reversal:
 	checkobedience
 	usedmovetext
 	doturn
+	critical
 	constantdamage
 	stab
+	damagevariation
 	checkhit
 	moveanim
 	failuretext
@@ -1319,7 +1321,6 @@ Snore:
 	checkfaint
 	buildopponentrage
 	flinchtarget
-	kingsrock
 	endmove
 
 Conversion2:
@@ -1408,13 +1409,12 @@ TripleKick:
 	doturn
 	startloop
 	lowersub
-	checkhit
 	critical
-	damagestats
-	damagecalc
 	triplekick
+	damagecalc
 	stab
 	damagevariation
+	checkhit
 	clearmissdamage
 	moveanimnosub
 	failuretext
@@ -1424,10 +1424,10 @@ TripleKick:
 	supereffectivelooptext
 	checkfaint
 	buildopponentrage
+	kingsrock
 	kickcounter
 	endloop
 	raisesub
-	kingsrock
 	endmove
 
 Thief:
@@ -1440,7 +1440,6 @@ Thief:
 	stab
 	damagevariation
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage
@@ -1463,6 +1462,7 @@ Nightmare:
 	checkobedience
 	usedmovetext
 	doturn
+	checkhit
 	nightmare
 	endmove
 

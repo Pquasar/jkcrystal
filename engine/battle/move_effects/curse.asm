@@ -58,9 +58,6 @@ BattleCommand_Curse:
 	call CheckHiddenOpponent
 	jr nz, .failed
 
-	call CheckSubstituteOpp
-	jr nz, .failed
-
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_CURSE, [hl]

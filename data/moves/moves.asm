@@ -163,48 +163,48 @@ Moves:
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,         STATUS,   100, 15,   0 ; Grass types are immune to powder moves
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,        STATUS,    70, 20,   0 ; Marked for deletion
 	move PSYWAVE,      EFFECT_PSYWAVE,             1, PSYCHIC_TYPE,  SPECIAL,  100, 15,   0 ; Accuracy 80% -> 100% | NEED TO: change damage formula
-	move SPLASH,       EFFECT_SPLASH,              0, NORMAL,        STATUS,   100, 40,   0
-	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,        STATUS,   100, 40,   0
-	move CRABHAMMER,   EFFECT_NORMAL_HIT,         90, WATER,         PHYSICAL,  85, 10,   0
-	move EXPLOSION,    EFFECT_SELFDESTRUCT,      250, NORMAL,        PHYSICAL, 100,  5,   0
+	move SPLASH,       EFFECT_SPLASH,              0, NORMAL,        STATUS,   100, 40,   0 ; No changes
+	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,        STATUS,   100, 20,   0 ; PP 40 -> 20
+	move CRABHAMMER,   EFFECT_NORMAL_HIT,        100, WATER,         PHYSICAL,  90, 10,   0 ; Accuracy 85% -> 90% | power 90 -> 100
+	move EXPLOSION,    EFFECT_SELFDESTRUCT,      250, NORMAL,        PHYSICAL, 100,  5,   0 ; Explosion moves don't halve the target's defense | NEED TO: don't remove the pokemon's sprite after use
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  80, 15,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock | NEED TO: check if focus band can activate repeatedly
-	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,        PHYSICAL,  90, 10,   0
-	move REST,         EFFECT_HEAL,                0, PSYCHIC_TYPE,  STATUS,   100, 10,   0
-	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         75, ROCK,          PHYSICAL,  90, 10,  30
-	move HYPER_FANG,   EFFECT_FLINCH_HIT,         80, NORMAL,        PHYSICAL,  90, 15,  10
-	move SHARPEN,      EFFECT_ATTACK_UP,           0, NORMAL,        STATUS,   100, 30,   0
-	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,        STATUS,   100, 30,   0
-	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         80, NORMAL,        SPECIAL,  100, 10,  20
-	move SUPER_FANG,   EFFECT_SUPER_FANG,          1, NORMAL,        PHYSICAL,  90, 10,   0
-	move SLASH,        EFFECT_NORMAL_HIT,         70, NORMAL,        PHYSICAL, 100, 20,   0
-	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,        STATUS,   100, 10,   0
-	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,        PHYSICAL, 100,  1,   0
-	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,        STATUS,   100,  1,   0
-	move TRIPLE_KICK,  EFFECT_TRIPLE_KICK,        10, FIGHTING,      PHYSICAL,  90, 10,   0
-	move THIEF,        EFFECT_THIEF,              40, DARK,          PHYSICAL, 100, 10, 100
-	move SPIDER_WEB,   EFFECT_MEAN_LOOK,           0, BUG,           STATUS,   100, 10,   0
-	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
-	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,         STATUS,   100, 15,   0
+	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,        PHYSICAL,  90, 10,   0 ; Each hit can now activate King's Rock | NEED TO: check if focus band can activate repeatedly | NEED TO: check if substitute falling ends the move early
+	move REST,         EFFECT_HEAL,                0, PSYCHIC_TYPE,  STATUS,   100, 10,   0 ; Rest cannot be called by sleep talk
+	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         75, ROCK,          PHYSICAL,  90, 10,  30 ; No changes
+	move HYPER_FANG,   EFFECT_FLINCH_HIT,         80, NORMAL,        PHYSICAL,  90, 15,  10 ; No changes
+	move SHARPEN,      EFFECT_ATTACK_UP,           0, NORMAL,        STATUS,   100, 30,   0 ; No changes
+	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,        STATUS,   100, 30,   0 ; Conversion can be used on curse | NEED TO: conversion uses the first move slot of the enemy
+	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         80, NORMAL,        SPECIAL,  100, 10,  20 ; Tri attack cannot freeze an ice type or burn a fire type or paralyze an electric type
+	move SUPER_FANG,   EFFECT_SUPER_FANG,          1, NORMAL,        PHYSICAL,  90, 10,   0 ; No changes
+	move SLASH,        EFFECT_NORMAL_HIT,         70, NORMAL,        PHYSICAL, 100, 20,   0 ; No changes
+	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,        STATUS,   100, 10,   0 ; NEED TO: check substitute
+	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,        PHYSICAL, 100,  1,   0 ; Struggle's recoil is 1/4th max hp | NEED TO: struggle never misses
+	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,        STATUS,   100,  1,   0 ; NEED TO: sketch can copy mirror move and sleep talk, metronome mimic and transform
+	move TRIPLE_KICK,  EFFECT_TRIPLE_KICK,         1, FIGHTING,      PHYSICAL,  90, 10,   0 ; Update triple kick
+	move THIEF,        EFFECT_THIEF,              60, DARK,          PHYSICAL, 100, 25, 100 ; Theif's effect always works | Power 40 -> 60 | PP 10 -> 25 | NEED TO: thief doesn't permanently steal the item in trainer battles.
+	move SPIDER_WEB,   EFFECT_MEAN_LOOK,           0, BUG,           STATUS,   100, 10,   0 ; Ghost type pokemon cant be trapped | NEED TO: baton pass switchers are not trapped
+	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0 ; NEED TO: Fails if already active | Cannot be baton passed | Effect leaves when user or target leaves | Effect ends next turn
+	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,         STATUS,   100, 15,   0 ; Nightmare is affected by accuracy | NEED TO: end turn effects happen at the end
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,          PHYSICAL, 100, 25,  10 ; Fire-type damaging moves thaw the target
-	move SNORE,        EFFECT_SNORE,              40, NORMAL,        SPECIAL,  100, 15,  30
-	move CURSE,        EFFECT_CURSE,               0, CURSE_TYPE,    STATUS,   100, 10,   0
-	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,        PHYSICAL, 100, 15,   0
-	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,        STATUS,   100, 30,   0
-	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, FLYING,        SPECIAL,   95,  5,   0
-	move COTTON_SPORE, EFFECT_SPEED_DOWN_2,        0, GRASS,         STATUS,    85, 40,   0 ; Grass types are immune to powder moves
-	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,      PHYSICAL, 100, 15,   0
-	move SPITE,        EFFECT_SPITE,               0, GHOST,         STATUS,   100, 10,   0
-	move POWDER_SNOW,  EFFECT_FREEZE_HIT,         40, ICE,           SPECIAL,  100, 25,  10
-	move PROTECT,      EFFECT_PROTECT,             0, NORMAL,        STATUS,   100, 10,   0
-	move MACH_PUNCH,   EFFECT_PRIORITY_HIT,       40, FIGHTING,      PHYSICAL, 100, 30,   0
-	move SCARY_FACE,   EFFECT_SPEED_DOWN_2,        0, NORMAL,        STATUS,    90, 10,   0
-	move FAINT_ATTACK, EFFECT_ALWAYS_HIT,         60, DARK,          PHYSICAL, 100, 20,   0
-	move SWEET_KISS,   EFFECT_CONFUSE,             0, NORMAL,        STATUS,    75, 10,   0
-	move BELLY_DRUM,   EFFECT_BELLY_DRUM,          0, NORMAL,        STATUS,   100, 10,   0
-	move SLUDGE_BOMB,  EFFECT_POISON_HIT,         90, POISON,        SPECIAL,  100, 10,  30
-	move MUD_SLAP,     EFFECT_ACCURACY_DOWN_HIT,  20, GROUND,        SPECIAL,  100, 10, 100
-	move OCTAZOOKA,    EFFECT_ACCURACY_DOWN_HIT,  65, WATER,         SPECIAL,   85, 10,  50
-	move SPIKES,       EFFECT_SPIKES,              0, GROUND,        STATUS,   100, 20,   0
+	move SNORE,        EFFECT_SNORE,              50, NORMAL,        SPECIAL,  100, 15,  30 ; Snore is not affected by King's Rock | Power 40 -> 50 | NEED TO: snore bypasses substitute
+	move CURSE,        EFFECT_CURSE,               0, GHOST,         STATUS,   100, 10,   0 ; Curse is now Ghost type | Curse can hit through a substitute | NEED TO: Only fail if all 3 stats are at max/ min | Cursed pokemon take curse damage if the opponent faints 
+	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,        PHYSICAL, 100, 15,   0 ; Reversal moves now have damage variation and can cause a critical hit
+	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,        STATUS,   100, 30,   0 ; NEED TO: won't change the user to any of the types it arleady is
+	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, FLYING,        SPECIAL,   95,  5,   0 ; No changes
+	move COTTON_SPORE, EFFECT_SPEED_DOWN_2,        0, GRASS,         STATUS,   100, 40,   0 ; Grass types are immune to powder moves | Accuracy 85% -> 100%
+	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,      PHYSICAL, 100, 15,   0 ; Reversal moves now have damage variation and can cause a critical hit
+	move SPITE,        EFFECT_SPITE,               0, GHOST,         STATUS,   100, 10,   0 ; Spite always decreases pp by 4 | NEED TO: make sure text shows correct amount of pp depleted
+	move POWDER_SNOW,  EFFECT_FREEZE_HIT,         40, ICE,           SPECIAL,  100, 25,  10 ; No changes
+	move PROTECT,      EFFECT_PROTECT,             0, NORMAL,        STATUS,   100, 10,   0 ; NEED TO: protect success rate is 1/3 ever time, not 1/2
+	move MACH_PUNCH,   EFFECT_PRIORITY_HIT,       40, FIGHTING,      PHYSICAL, 100, 30,   0 ; No changes
+	move SCARY_FACE,   EFFECT_SPEED_DOWN_2,        0, NORMAL,        STATUS,   100, 10,   0 ; Accuracy 90% -> 100%
+	move FAINT_ATTACK, EFFECT_ALWAYS_HIT,         60, DARK,          PHYSICAL, 100, 20,   0 ; No changes
+	move SWEET_KISS,   EFFECT_CONFUSE,             0, NORMAL,        STATUS,    75, 10,   0 ; MAYBE: Make sweet kiss fairy type
+	move BELLY_DRUM,   EFFECT_BELLY_DRUM,          0, NORMAL,        STATUS,   100, 10,   0 ; No changes
+	move SLUDGE_BOMB,  EFFECT_POISON_HIT,         90, POISON,        SPECIAL,  100, 10,  30 ; No changes
+	move MUD_SLAP,     EFFECT_ACCURACY_DOWN_HIT,  20, GROUND,        SPECIAL,  100, 10, 100 ; No changes
+	move OCTAZOOKA,    EFFECT_ACCURACY_DOWN_HIT,  65, WATER,         SPECIAL,   85, 10,  50 ; No changes
+	move SPIKES,       EFFECT_SPIKES,              0, GROUND,        STATUS,   100, 20,   0 ; Spikes can go up to 3 layers
 	move ZAP_CANNON,   EFFECT_PARALYZE_HIT,      100, ELECTRIC,      SPECIAL,   50,  5, 100 ; Electric-type targets can't be paralyzed
 	move FORESIGHT,    EFFECT_FORESIGHT,           0, NORMAL,        STATUS,   100, 40,   0
 	move DESTINY_BOND, EFFECT_DESTINY_BOND,        0, GHOST,         STATUS,   100,  5,   0

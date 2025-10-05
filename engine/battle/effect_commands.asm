@@ -2125,7 +2125,14 @@ BattleCommand_FailureText:
 	jr z, .multihit
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .multihit
+	cp EFFECT_TRIPLE_KICK
+	jr z, .end_loop
 	jp EndMoveEffect
+
+.end_loop
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVarAddr
+	res SUBSTATUS_IN_LOOP, [hl]
 
 .multihit
 	call BattleCommand_RaiseSub
@@ -2241,6 +2248,25 @@ GetFailureResultText:
 	ld hl, ButItFailedText
 	ld de, ItFailedText
 	jr z, .got_text
+	cp EFFECT_TRIPLE_KICK
+	jr nz, .missed
+	ld a, [wBattleAnimParam]
+	and a
+	jr z, .missed
+	ld hl, PlayerHitTimesText
+	ld de, PlayerHitTimesText
+	ld bc, wPlayerDamageTaken
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .set_value
+	ld hl, EnemyHitTimesText
+	ld de, EnemyHitTimesText
+	ld bc, wEnemyDamageTaken
+.set_value
+	ld a, [wBattleAnimParam]
+	ld [bc], a
+	jr .got_text
+.missed
 	ld hl, AttackMissedText
 	ld de, AttackMissed2Text
 	ld a, [wCriticalHit]
@@ -5267,15 +5293,8 @@ BattleCommand_EndLoop:
 	jr z, .beat_up
 	cp EFFECT_TRIPLE_KICK
 	jr nz, .not_triple_kick
-.reject_triple_kick_sample
-	call BattleRandom
-	and $3
-	jr z, .reject_triple_kick_sample
-	dec a
-	jr nz, .double_hit
-	ld a, 1
-	ld [bc], a
-	jr .done_loop
+	ld a, 2
+	jr .double_hit
 
 .beat_up
 	ldh a, [hBattleTurn]
@@ -5750,6 +5769,9 @@ BattleCommand_TrapTarget:
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret nz
+	ld b, ghost
+	call CheckIfTargetIsGivenType
+	ret z
 	call BattleRandom
 	; trapped for 4-5 turns
 	and %1
