@@ -80,7 +80,7 @@ Moves:
 	move PECK,         EFFECT_NORMAL_HIT,         35, FLYING,        PHYSICAL, 100, 35,   0 ; No changes
 	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,        PHYSICAL, 100, 20,   0 ; No changes
 	move SUBMISSION,   EFFECT_RECOIL_HIT,         80, FIGHTING,      PHYSICAL,  80, 20,   0 ; PP 25 -> 20
-	move LOW_KICK,     EFFECT_LOW_KICK,            1, FIGHTING,      PHYSICAL,  90, 20,  30 ; Power 50 -> varies by weight
+	move LOW_KICK,     EFFECT_LOW_KICK,            1, FIGHTING,      PHYSICAL, 100, 20,  30 ; Power 50 -> varies by weight | Accuracy 90% -> 100%
 	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING,      PHYSICAL, 100, 20,   0 ; Priority -1 -> -2 | NEED TO: Counter cannot be copied by mirror move | Fix missed OHKO moves being countered | Counter becomes a 1 power physical move if the opponent did 0 damage
 	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, FIGHTING,      PHYSICAL, 100, 20,   0 ; No changes
 	move STRENGTH,     EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL, 100, 15,   0 ; No changes
@@ -140,7 +140,7 @@ Moves:
 	move SLUDGE,       EFFECT_POISON_HIT,         65, POISON,        SPECIAL,  100, 20,  30 ; No changes
 	move BONE_CLUB,    EFFECT_FLINCH_HIT,         65, GROUND,        PHYSICAL,  85, 20,  10 ; No changes
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          110, FIRE,          SPECIAL,   85,  5,  10 ; Fire-type damaging moves thaw the target
-	move WATERFALL,    EFFECT_NORMAL_HIT,         80, WATER,         PHYSICAL, 100, 15,   0 ; Power 120 -> 110
+	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,         PHYSICAL, 100, 15,  20 ; Power 120 -> 110 | +20% flinch chance
 	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         PHYSICAL,  85, 15,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5 | Trapping moves are affected by King's Rock | Accuraccy 75% -> 85% | pp 10 -> 15
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,        SPECIAL,  100, 20,   0 ; No changes
 	move SKULL_BASH,   EFFECT_SKULL_BASH,        130, NORMAL,        PHYSICAL, 100, 10,   0 ; Power 100 -> 130 | pp 15 -> 10
@@ -183,7 +183,7 @@ Moves:
 	move TRIPLE_KICK,  EFFECT_TRIPLE_KICK,         1, FIGHTING,      PHYSICAL,  90, 10,   0 ; Update triple kick
 	move THIEF,        EFFECT_THIEF,              60, DARK,          PHYSICAL, 100, 25, 100 ; Theif's effect always works | Power 40 -> 60 | PP 10 -> 25 | NEED TO: thief doesn't permanently steal the item in trainer battles.
 	move SPIDER_WEB,   EFFECT_MEAN_LOOK,           0, BUG,           STATUS,   100, 10,   0 ; Ghost type pokemon cant be trapped | NEED TO: baton pass switchers are not trapped
-	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0 ; NEED TO: Fails if already active | Cannot be baton passed | Effect leaves when user or target leaves | Effect ends next turn
+	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0 ; NEED TO: Fails if already active | Cannot be baton passed | Effect leaves when user or target leaves | Effect ends next turn | Never misses
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,         STATUS,   100, 15,   0 ; Nightmare is affected by accuracy | NEED TO: end turn effects happen at the end
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,          PHYSICAL, 100, 25,  10 ; Fire-type damaging moves thaw the target
 	move SNORE,        EFFECT_SNORE,              50, NORMAL,        SPECIAL,  100, 15,  30 ; Snore is not affected by King's Rock | Power 40 -> 50 | NEED TO: snore bypasses substitute
@@ -205,17 +205,17 @@ Moves:
 	move MUD_SLAP,     EFFECT_ACCURACY_DOWN_HIT,  20, GROUND,        SPECIAL,  100, 10, 100 ; No changes
 	move OCTAZOOKA,    EFFECT_ACCURACY_DOWN_HIT,  65, WATER,         SPECIAL,   85, 10,  50 ; No changes
 	move SPIKES,       EFFECT_SPIKES,              0, GROUND,        STATUS,   100, 20,   0 ; Spikes can go up to 3 layers
-	move ZAP_CANNON,   EFFECT_PARALYZE_HIT,      100, ELECTRIC,      SPECIAL,   50,  5, 100 ; Electric-type targets can't be paralyzed
-	move FORESIGHT,    EFFECT_FORESIGHT,           0, NORMAL,        STATUS,   100, 40,   0
-	move DESTINY_BOND, EFFECT_DESTINY_BOND,        0, GHOST,         STATUS,   100,  5,   0
-	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,        STATUS,   100,  5,   0
-	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     55, ICE,           SPECIAL,   95, 15, 100
-	move DETECT,       EFFECT_PROTECT,             0, FIGHTING,      STATUS,   100,  5,   0
-	move BONE_RUSH,    EFFECT_MULTI_HIT,          25, GROUND,        PHYSICAL,  80, 10,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock | NEED TO: check if focus band can activate repeatedly
+	move ZAP_CANNON,   EFFECT_PARALYZE_HIT,      120, ELECTRIC,      SPECIAL,   50,  5, 100 ; Electric-type targets can't be paralyzed | Power 100 -> 120
+	move FORESIGHT,    EFFECT_FORESIGHT,           0, NORMAL,        STATUS,   100, 40,   0 ; NEED TO: update foresight
+	move DESTINY_BOND, EFFECT_DESTINY_BOND,        0, GHOST,         STATUS,   100,  5,   0 ; NEED TO: destiny bond fails if used twice in a row | Pokemon that used destiny bond faints first
+	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,        STATUS,   100,  5,   0 ; NEED TO: Perish song pokemon faint in the order they would move
+	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     55, ICE,           SPECIAL,   95, 15, 100 ; No changes
+	move DETECT,       EFFECT_PROTECT,             0, FIGHTING,      STATUS,   100,  5,   0 ; NEED TO: protect success rate is 1/3 ever time, not 1/2
+	move BONE_RUSH,    EFFECT_MULTI_HIT,          25, GROUND,        PHYSICAL,  90, 10,   0 ; Hit chance ratio (2:3:4:5) 3:3:1:1 -> 7:7:3:3 | Each hit can now activate King's Rock | Accuracy 80% -> 90% | NEED TO: check if focus band can activate repeatedly 
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
-	move OUTRAGE,      EFFECT_RAMPAGE,            90, DRAGON,        PHYSICAL, 100, 15,   0
+	move OUTRAGE,      EFFECT_RAMPAGE,           120, DRAGON,        PHYSICAL, 100, 10,   0 ; Power 90 -> 120 | PP 15 -> 10
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,          STATUS,   100, 10,   0
-	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          60, GRASS,         SPECIAL,  100,  5,   0
+	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          75, GRASS,         SPECIAL,  100, 10,   0 ; Power 60 -> 75 | PP 5 -> 10
 	move ENDURE,       EFFECT_ENDURE,              0, NORMAL,        STATUS,   100, 10,   0
 	move CHARM,        EFFECT_ATTACK_DOWN_2,       0, NORMAL,        STATUS,   100, 20,   0
 	move ROLLOUT,      EFFECT_ROLLOUT,            30, ROCK,          PHYSICAL,  90, 20,   0
@@ -223,7 +223,7 @@ Moves:
 	move SWAGGER,      EFFECT_SWAGGER,             0, NORMAL,        STATUS,    90, 15, 100
 	move MILK_DRINK,   EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 10,   0
 	move SPARK,        EFFECT_PARALYZE_HIT,       65, ELECTRIC,      PHYSICAL, 100, 20,  30 ; Electric-type targets can't be paralyzed
-	move FURY_CUTTER,  EFFECT_FURY_CUTTER,        10, BUG,           PHYSICAL,  95, 20,   0
+	move FURY_CUTTER,  EFFECT_FURY_CUTTER,        40, BUG,           PHYSICAL,  95, 20,   0 ; Power 10 -> 40 | 
 	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     70, STEEL,         PHYSICAL,  90, 25,  10
 	move MEAN_LOOK,    EFFECT_MEAN_LOOK,           0, NORMAL,        STATUS,   100,  5,   0
 	move ATTRACT,      EFFECT_ATTRACT,             0, NORMAL,        STATUS,   100, 15,   0
@@ -255,14 +255,14 @@ Moves:
 	move TWISTER,      EFFECT_TWISTER,            40, DRAGON,        SPECIAL,  100, 20,  20 ; Power is doubled instead of damage if used against a flying opponent
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,         STATUS,    90,  5,   0
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,    90,  5,   0
-	move CRUNCH,       EFFECT_SP_DEF_DOWN_HIT,    80, DARK,          PHYSICAL, 100, 15,  20
+	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,   80, DARK,          PHYSICAL, 100, 15,  20 ; Sp def down hit -> def down hit
 	move MIRROR_COAT,  EFFECT_MIRROR_COAT,         1, PSYCHIC_TYPE,  SPECIAL,  100, 20,   0
 	move PSYCH_UP,     EFFECT_PSYCH_UP,            0, NORMAL,        STATUS,   100, 10,   0
 	move EXTREMESPEED, EFFECT_PRIORITY_HIT,       80, NORMAL,        PHYSICAL, 100,  5,   0
 	move ANCIENTPOWER, EFFECT_ALL_UP_HIT,         60, ROCK,          SPECIAL,  100,  5,  10
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,         SPECIAL,  100, 15,  20
-	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,       80, PSYCHIC_TYPE,  SPECIAL,   90, 15,   0
-	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,      PHYSICAL, 100, 15,  50
-	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5 | Trapping moves are affected by King's Rock
+	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      120, PSYCHIC_TYPE,  SPECIAL,  100, 10,   0 ; Powr 80 -> 120 | Accuracy 90% -> 100% | PP 15 -> 10
+	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   40, FIGHTING,      PHYSICAL, 100, 15,  50 ; Power 20 -> 40
+	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        35, WATER,         SPECIAL,   85, 15,   0 ; Damage per turn for trapping moves 1/16 max hp -> 1/8 max hp | Turns trapped 2-5 -> 4-5 | Trapping moves are affected by King's Rock | Power 15 -> 35 | Accuracy 70% - 85%
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0
 	assert_table_length NUM_ATTACKS
