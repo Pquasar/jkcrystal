@@ -645,12 +645,6 @@ BattleCommand_CheckObedience:
 	xor a
 	ld [wAlreadyDisobeyed], a
 
-	; No obedience in link battles
-	; (since no handling exists for enemy)
-	ld a, [wLinkMode]
-	and a
-	ret nz
-
 	ld a, [wInBattleTowerBattle]
 	and a
 	ret nz
@@ -5769,7 +5763,7 @@ BattleCommand_TrapTarget:
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret nz
-	ld b, ghost
+	ld b, GHOST
 	call CheckIfTargetIsGivenType
 	ret z
 	call BattleRandom
